@@ -1,8 +1,6 @@
 # Local helper scripts & logs (not part of the site)
-_push*.bat
-_push*.log
-_vercel.bat
-_vercel.log
+_*.bat
+*.log
 
 # OS files
 .DS_Store
