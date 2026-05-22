@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>PROJECTS — PARK YIHYUN / UI·UX Designer Portfolio</title>
+    <meta name="description" content="UI/UX 디자이너 박이현 포트폴리오 — 프로젝트 상세페이지. 공공기관·B2B 관제·코퍼레이트·캠페인 랜딩 6건의 의사결정과 산출물." />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+
+    <style>
+        /* ==========================================================
+           PARK YIHYUN — PORTFOLIO PROJECT DETAIL
+           Single-file build · Pretendard Variable · Cobalt #2563EB
+           ========================================================== */
+
+        /* --- TOKENS ------------------------------------------------ */
+        :root {
+            /* Brand */
+            --c-point   : #2563EB;     /* 코발트 블루 */
+            --c-point-d : #1D4FCC;     /* 코발트 hover */
+            --c-accent  : #4FD1C5;     /* 소프트 틸 (장식) */
+
+            /* Foreground / surface */
+            --c-ink-1   : #111111;
+            --c-ink-2   : #444444;
+            --c-ink-3   : #888888;
+            --c-line    : #E5E7EB;
+            --c-line-2  : #EFF0F2;
+            --c-bg      : #FFFFFF;
+            --c-bg-sub  : #F6F7F9;
+            --c-bg-dark : #0C0C0C;
+
+            /* Shadow (border 대신 box-shadow) */
+            --sh-1: 0 2px 8px rgba(17,17,17,0.04), 0 0 0 1px rgba(17,17,17,0.04);
+            --sh-2: 0 8px 24px rgba(17,17,17,0.06), 0 0 0 1px rgba(17,17,17,0.04);
+            --sh-3: 0 18px 48px rgba(17,17,17,0.10), 0 0 0 1px rgba(17,17,17,0.04);
+
+            /* Spacing / radius */
+            --r-pill: 999px;
+            --r-md  : 12px;
+            --r-lg  : 20px;
+            --r-xl  : 28px;
+
+            /* Container */
+            --cont-w: 1200px;
+            --gutter: 24px;
+        }
+
+        /* --- RESET ------------------------------------------------- */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--c-ink-1);
+            background: var(--c-bg);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            word-break: keep-all;
+        }
+        h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+        ul, ol { list-style: none; }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+        img, svg { display: block; max-width: 100%; }
+        :focus-visible { outline: 2px solid var(--c-point); outline-offset: 2px; border-radius: 4px; }
+
+        /* --- A11Y UTILS -------------------------------------------- */
+        .skip {
+            position: absolute; left: -9999px; top: 0;
+            padding: 12px 16px; background: var(--c-ink-1); color: #fff;
+            font-size: 14px; font-weight: 600; border-radius: 0 0 8px 0; z-index: 1000;
+        }
+        .skip:focus { left: 0; }
+        .blind {
+            position: absolute; width: 1px; height: 1px; margin: -1px;
+            padding: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0;
+        }
+
+        /* --- HEADER / GNB ------------------------------------------ */
+        #header {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            box-shadow: 0 1px 0 rgba(17,17,17,0.06);
+        }
+        .hd_inner {
+            max-width: var(--cont-w); margin: 0 auto;
+            padding: 16px var(--gutter);
+            display: flex; align-items: center; justify-content: space-between; gap: 24px;
+        }
+        .hd_brand {
+            display: flex; align-items: baseline; gap: 10px;
+            font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+        }
+        .hd_brand .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--c-point); display: inline-block;
+            transform: translateY(-1px);
+        }
+        .hd_brand .role { font-size: 12px; font-weight: 500; color: var(--c-ink-3); letter-spacing: 0.04em; }
+        .hd_back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; font-weight: 500; color: var(--c-ink-2);
+        }
+        .hd_back:hover { color: var(--c-point); }
+
+        /* --- PROJECT TAB NAV --------------------------------------- */
+        #gnb {
+            position: sticky; top: 64px; z-index: 40;
+            background: var(--c-bg);
+            box-shadow: 0 1px 0 var(--c-line-2);
+        }
+        .gnb_inner {
+            max-width: var(--cont-w); margin: 0 auto;
+            padding: 0 var(--gutter);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .gnb_inner::-webkit-scrollbar { display: none; }
+        .gnb_list {
+            display: flex; gap: 4px; min-width: max-content;
+        }
+        .gnb_list .btn_tab {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 18px 4px;
+            font-size: 14px; font-weight: 500;
+            color: var(--c-ink-3);
+            position: relative;
+            margin-right: 20px;
+            white-space: nowrap;
+            transition: color .15s ease;
+        }
+        .gnb_list .btn_tab:hover { color: var(--c-ink-1); }
+        .gnb_list .btn_tab .num {
+            font-size: 12px; font-weight: 600; color: var(--c-ink-3);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.02em;
+        }
+        .gnb_list .btn_tab[aria-selected="true"] { color: var(--c-ink-1); font-weight: 600; }
+        .gnb_list .btn_tab[aria-selected="true"]::after {
+            content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+            height: 2px; background: var(--c-point);
+        }
+        .gnb_list .btn_tab[aria-selected="true"] .num { color: var(--c-point); }
+
+        /* --- CONTAINER --------------------------------------------- */
+        #container { padding: 96px 0 160px; }
+        .inner {
+            max-width: var(--cont-w); margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+        .inner_narrow {
+            max-width: 880px; margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        /* --- PROJECT ARTICLE: hidden by default until selected ----- */
+        .prj { display: none; }
+        .prj.is-active { display: block; }
+
+        /* --- 1. HERO — dark editorial, asymmetric -------------------- */
+        .prj_hero {
+            position: relative;
+            margin: -96px 0 0;
+            padding: 160px 0 96px;
+            background: var(--c-bg-dark);
+            color: #fff;
+            overflow: hidden;
+        }
+        .prj_hero .inner_narrow,
+        .prj_hero .inner {
+            max-width: var(--cont-w);
+            position: relative;
+        }
+        /* Huge backdrop numeral */
+        .prj_hero::before {
+            content: attr(data-no);
+            position: absolute;
+            right: -2vw; bottom: -4vw;
+            font-size: clamp(220px, 32vw, 480px);
+            font-weight: 700;
+            line-height: 0.8;
+            letter-spacing: -0.06em;
+            color: rgba(255,255,255,0.03);
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" on;
+            pointer-events: none;
+            user-select: none;
+        }
+        .prj_hero .hero_top {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 64px;
+            position: relative;
+            font-size: 12px; font-weight: 600;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.5);
+        }
+        .prj_hero .hero_top .mark {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: #fff;
+        }
+        .prj_hero .hero_top .mark::before {
+            content: ""; width: 8px; height: 8px; border-radius: 50%;
+            background: var(--c-point);
+            box-shadow: 0 0 16px rgba(37,99,235,0.5);
+        }
+        .prj_hero .hero_top .idx {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" on;
+        }
+        .prj_hero .hero_top .idx em { color: #fff; font-style: normal; }
+
+        .prj_hero .tit {
+            font-size: clamp(40px, 7.2vw, 96px);
+            font-weight: 700;
+            line-height: 1.04;
+            letter-spacing: -0.035em;
+            color: #fff;
+            text-wrap: balance;
+            max-width: 14ch;
+            position: relative;
+        }
+        .prj_hero .sub {
+            margin-top: 40px;
+            font-size: clamp(16px, 1.4vw, 20px);
+            font-weight: 500;
+            color: rgba(255,255,255,0.66);
+            line-height: 1.65;
+            letter-spacing: -0.005em;
+            max-width: 56ch;
+            position: relative;
+        }
+        /* Existing prj_mark inside dark hero becomes eyebrow */
+        .prj_hero .prj_mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            font-size: 12px; font-weight: 700;
+            letter-spacing: 0.16em;
+            color: rgba(255,255,255,0.66);
+            text-transform: uppercase;
+            margin-bottom: 56px;
+        }
+        .prj_hero .prj_mark::before {
+            background: var(--c-point);
+            box-shadow: 0 0 16px rgba(37,99,235,0.5);
+        }
+
+        /* --- 2. META — inline rule bar (no gray box) ---------------- */
+        .prj_meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 24px 0 32px;
+            margin: 0 0 96px;
+            background: none;
+            border-radius: 0;
+            box-shadow: 0 1px 0 var(--c-ink-1), inset 0 1px 0 var(--c-ink-1);
+        }
+        .prj_meta > div {
+            flex: 1 1 0;
+            min-width: 160px;
+            padding: 4px 24px 4px 0;
+            position: relative;
+        }
+        .prj_meta > div + div {
+            padding-left: 24px;
+            box-shadow: inset 1px 0 0 var(--c-line);
+        }
+        .prj_meta dt {
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.14em;
+            color: var(--c-ink-3);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .prj_meta dd {
+            font-size: 15px; font-weight: 600;
+            color: var(--c-ink-1);
+            line-height: 1.5;
+            letter-spacing: -0.005em;
+        }
+        .prj_meta dd a {
+            color: var(--c-point);
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+        }
+        .prj_meta dd a:hover { color: var(--c-point-d); }
+
+        /* --- 3. INTRO — vertical impact rows, paren labels --------- */
+        .prj_intro { padding: 0 0 96px; }
+        .intro_head {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 32px; flex-wrap: wrap;
+            margin: 0 0 64px;
+        }
+        .intro_head .eyebrow {
+            display: inline-block;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.16em;
+            color: var(--c-point);
+            margin-bottom: 16px;
+            font-variant-numeric: tabular-nums;
+        }
+        .intro_head .tit {
+            font-size: clamp(28px, 3.4vw, 44px);
+            font-weight: 700; line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--c-ink-1);
+            text-wrap: balance;
+        }
+        .intro_flow {
+            display: flex; flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+        .intro_flow .step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 80px;
+            padding: 80px 0;
+            box-shadow: 0 -1px 0 var(--c-line);
+            background: none;
+            border-radius: 0;
+            transform: none;
+            align-items: start;
+        }
+        .intro_flow .step:last-child { box-shadow: 0 -1px 0 var(--c-line), 0 1px 0 var(--c-line); }
+
+        .intro_flow .step_lbl {
+            position: sticky; top: 200px;
+            display: flex; flex-direction: column; gap: 12px;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--c-ink-1);
+            text-transform: none;
+        }
+        .intro_flow .step_lbl::before {
+            content: "(" attr(data-num) ")";
+            font-size: 12px; font-weight: 600;
+            color: var(--c-ink-3);
+            letter-spacing: 0.08em;
+            background: none; padding: 0;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" on;
+        }
+        .intro_flow .step_lbl .tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 22px; font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--c-ink-1);
+            text-transform: none;
+        }
+        .intro_flow .step_lbl .tag::before {
+            content: "("; color: var(--c-ink-3);
+        }
+        .intro_flow .step_lbl .tag::after {
+            content: ")"; color: var(--c-ink-3);
+        }
+
+        .intro_flow .step_body {
+            display: flex; flex-direction: column;
+            gap: 28px;
+            min-width: 0;
+        }
+        .intro_flow .step_tit {
+            font-size: clamp(32px, 5vw, 68px);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            color: var(--c-ink-1);
+            text-wrap: balance;
+            margin: 0;
+        }
+        .intro_flow .step_body .desc {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--c-ink-2);
+            letter-spacing: -0.005em;
+            max-width: 60ch;
+            text-wrap: pretty;
+        }
+        .intro_flow .step_body .desc strong {
+            color: var(--c-ink-1);
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, rgba(37,99,235,0.16) 60%);
+            padding: 0 2px;
+        }
+        .intro_flow .step_tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            padding: 0;
+            margin-top: 8px;
+            box-shadow: none;
+        }
+        .intro_flow .step_tags li {
+            padding: 8px 14px;
+            font-size: 13px; font-weight: 600;
+            color: var(--c-ink-1);
+            background: #fff;
+            border-radius: var(--r-pill);
+            box-shadow: inset 0 0 0 1px var(--c-line);
+            letter-spacing: -0.005em;
+        }
+        .intro_flow .step_tags li.is-key {
+            background: var(--c-point);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        /* Stat callouts inside body */
+        .intro_flow .stats {
+            display: flex; gap: 56px;
+            margin: 8px 0 0;
+            flex-wrap: wrap;
+        }
+        .intro_flow .stats .s_val {
+            display: block;
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 700; line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--c-ink-1);
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" on;
+        }
+        .intro_flow .stats .s_val .u {
+            font-size: 0.5em; color: var(--c-ink-3); margin-left: 6px; font-weight: 600;
+        }
+        .intro_flow .stats .s_val.is-pt { color: var(--c-point); }
+        .intro_flow .stats .s_lbl {
+            display: block;
+            margin-top: 8px;
+            font-size: 12px; font-weight: 600;
+            color: var(--c-ink-3);
+            letter-spacing: 0.06em;
+        }
+
+        /* DECISIONS — focus row */
+        .intro_flow .step_focus {
+            background: var(--c-bg-dark);
+            color: #fff;
+            margin: 0 calc(50% - 50vw);
+            padding-left: calc(50vw - 50%);
+            padding-right: calc(50vw - 50%);
+            box-shadow: none;
+        }
+        .intro_flow .step_focus + .step,
+        .step_focus { box-shadow: none; }
+        .intro_flow .step_focus .step_lbl { color: rgba(255,255,255,0.88); }
+        .intro_flow .step_focus .step_lbl::before { color: rgba(255,255,255,0.5); }
+        .intro_flow .step_focus .step_lbl .tag { color: #fff; }
+        .intro_flow .step_focus .step_lbl .tag::before,
+        .intro_flow .step_focus .step_lbl .tag::after { color: rgba(255,255,255,0.4); }
+        .intro_flow .step_focus .step_tit { color: #fff; }
+        .intro_flow .step_focus .step_body .desc { color: rgba(255,255,255,0.7); }
+        .intro_flow .step_focus .step_body .desc strong {
+            color: #fff;
+            background: linear-gradient(transparent 60%, rgba(37,99,235,0.5) 60%);
+        }
+        .intro_flow .step_focus .step_tags li {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.9);
+            box-shadow: none;
+        }
+        .intro_flow .step_focus .step_tags li.is-key {
+            background: var(--c-point);
+            color: #fff;
+        }
+        .intro_flow .step_focus .stats .s_val { color: #fff; }
+        .intro_flow .step_focus .stats .s_val.is-pt { color: var(--c-accent); }
+        .intro_flow .step_focus .stats .s_lbl { color: rgba(255,255,255,0.5); }
+
+        /* DELIVERABLES — outlined card variant */
+        .intro_flow .step_out .step_tags li {
+            background: #fff;
+            color: var(--c-ink-1);
+            box-shadow: inset 0 0 0 1px var(--c-ink-1);
+        }
+
+        /* legacy chart bits — fully hidden */
+        .intro_flow .step:not(:last-child)::after { display: none; }
+        .intro_flow .step_num,
+        .intro_flow .step_meta,
+        .intro_flow .step_desc,
+        .step_metrics, .step_chart, .step_scatter,
+        .step_diagram, .step_stack { display: none !important; }
+
+        }
+
+        /* --- 4. CTA ------------------------------------------------ */
+        .prj_cta { padding-bottom: 96px; }
+        .btn_live {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 16px 28px;
+            font-size: 16px; font-weight: 600;
+            color: #fff;
+            background: var(--c-ink-1);
+            border-radius: var(--r-pill);
+            transition: background .15s ease, transform .15s ease;
+        }
+        .btn_live:hover { background: var(--c-point); }
+        .btn_live::after {
+            content: ""; width: 14px; height: 14px;
+            background: currentColor;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M9 7h8v8'/></svg>") center/contain no-repeat;
+                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M9 7h8v8'/></svg>") center/contain no-repeat;
+        }
+
+        /* --- 5. AS-IS / TO-BE GOAL --------------------------------- */
+        .prj_goal {
+            padding: 96px 0;
+            background: var(--c-bg-sub);
+        }
+        .goal_head {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .goal_head .eyebrow {
+            display: inline-block;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.14em;
+            color: var(--c-point);
+            margin-bottom: 20px;
+        }
+        .goal_head .eyebrow::before { content: "("; color: var(--c-ink-3); margin-right: 4px; }
+        .goal_head .eyebrow::after  { content: ")"; color: var(--c-ink-3); margin-left: 4px; }
+        .goal_head .tit {
+            font-size: clamp(28px, 4vw, 56px);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: var(--c-ink-1);
+            text-wrap: balance;
+        }
+        .goal_list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+        .goal_item {
+            display: grid;
+            grid-template-columns: 1fr 48px 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 28px;
+            background: var(--c-bg);
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-1);
+        }
+        .goal_item .pill {
+            position: relative;
+            padding: 20px 24px;
+            border-radius: var(--r-md);
+            font-size: 16px; font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+        .goal_item .pill .lbl {
+            display: block;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+        .goal_item .pill_asis {
+            background: #fff;
+            color: var(--c-ink-2);
+            box-shadow: inset 0 0 0 1px var(--c-line);
+        }
+        .goal_item .pill_asis .lbl { color: var(--c-ink-3); }
+        .goal_item .pill_tobe {
+            background: var(--c-ink-1);
+            color: #fff;
+        }
+        .goal_item .pill_tobe .lbl { color: var(--c-accent); }
+        .goal_item .arrow {
+            justify-self: center;
+            width: 36px; height: 36px;
+            display: grid; place-items: center;
+            color: var(--c-point);
+        }
+        .goal_item .arrow svg { width: 28px; height: 28px; display: block; }
+        .goal_item .arrow .y { display: none; }
+
+        /* --- 6. BIG VISUAL — TAB-BASED VIEWER ---------------------- */
+        .prj_visual { padding: 120px 0; }
+        .visual_head {
+            display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+            margin-bottom: 40px; flex-wrap: wrap;
+        }
+        .visual_head .head_l { text-align: left; }
+        .visual_tabs {
+            display: inline-flex; gap: 4px;
+            padding: 4px;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-pill);
+        }
+        .visual_tabs .btn_v {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px;
+            font-size: 13px; font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--c-ink-3);
+            border-radius: var(--r-pill);
+            transition: background .15s ease, color .15s ease;
+        }
+        .visual_tabs .btn_v:hover { color: var(--c-ink-1); }
+        .visual_tabs .btn_v[aria-selected="true"] {
+            background: #fff;
+            color: var(--c-ink-1);
+            box-shadow: var(--sh-1);
+        }
+        .visual_tabs .btn_v .ic {
+            width: 14px; height: 14px;
+            display: inline-block;
+        }
+        .visual_panels { position: relative; }
+        .visual_pane { display: none; }
+        .visual_pane.is-active { display: block; }
+
+        /* PC pane — long scroll container */
+        .visual_pc_long {
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--sh-3);
+            background: #fff;
+        }
+        .visual_pc_long .scroll {
+            max-height: 70vh;
+            overflow-y: auto;
+            background: var(--c-bg-sub);
+            scrollbar-width: thin;
+        }
+        .visual_pc_long .scroll::-webkit-scrollbar { width: 10px; }
+        .visual_pc_long .scroll::-webkit-scrollbar-track { background: var(--c-bg-sub); }
+        .visual_pc_long .scroll::-webkit-scrollbar-thumb { background: var(--c-line); border-radius: 10px; border: 2px solid var(--c-bg-sub); }
+        .visual_pc_long .longshot {
+            aspect-ratio: 16 / 36;
+            background: var(--c-bg-sub);
+            position: relative;
+        }
+        .visual_pc_long .hint {
+            position: sticky; bottom: 12px; left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 14px;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+            color: #fff; background: rgba(17,17,17,0.7);
+            border-radius: var(--r-pill);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            margin: 0 auto;
+            width: max-content;
+            pointer-events: none;
+        }
+        .visual_pc_long .hint_wrap {
+            position: sticky; bottom: 16px;
+            display: flex; justify-content: center;
+            margin-top: -40px;
+            pointer-events: none;
+        }
+
+        /* Tablet pane — single centered frame */
+        .visual_tablet_solo {
+            display: flex; justify-content: center;
+            padding: 48px 32px;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-xl);
+            box-shadow: var(--sh-2);
+        }
+        .visual_tablet_solo .frame {
+            width: 100%; max-width: 720px; aspect-ratio: 4 / 3;
+            border-radius: 18px;
+            background: #fff;
+            position: relative; overflow: hidden;
+            box-shadow: inset 0 0 0 10px #1a1a1a, var(--sh-2);
+        }
+
+        /* Mobile pane — single centered phone */
+        .visual_mobile_solo {
+            display: flex; justify-content: center;
+            padding: 48px 32px;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-xl);
+            box-shadow: var(--sh-2);
+        }
+        .visual_mobile_solo .frame {
+            width: 280px; aspect-ratio: 9 / 19;
+            border-radius: 36px;
+            background: #fff;
+            position: relative; overflow: hidden;
+            box-shadow: inset 0 0 0 10px #1a1a1a, var(--sh-3);
+        }
+        .visual_mobile_solo .frame::before {
+            content: ""; position: absolute; top: 14px; left: 50%;
+            transform: translateX(-50%);
+            width: 76px; height: 22px; border-radius: 14px;
+            background: #1a1a1a; z-index: 2;
+        }
+        .visual_caption {
+            margin-top: 20px; text-align: center;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+            color: var(--c-ink-3);
+        }
+        .visual_caption strong { color: var(--c-ink-1); font-weight: 700; }
+
+        /* Legacy keep for backward compat --------------------------- */
+        .visual_head .eyebrow {
+            display: inline-block;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.14em;
+            color: var(--c-point);
+            margin-bottom: 20px;
+        }
+        .visual_head .eyebrow::before { content: "("; color: var(--c-ink-3); margin-right: 4px; }
+        .visual_head .eyebrow::after  { content: ")"; color: var(--c-ink-3); margin-left: 4px; }
+        .visual_head .tit {
+            font-size: clamp(24px, 3vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--c-ink-1);
+            line-height: 1.2;
+            text-wrap: balance;
+        }
+        .visual_pc {
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--sh-3);
+            background: #fff;
+            margin-bottom: 40px;
+        }
+        .visual_pc .chrome {
+            display: flex; align-items: center; gap: 8px;
+            padding: 14px 18px;
+            background: #f3f4f6;
+            box-shadow: 0 1px 0 rgba(17,17,17,0.04);
+        }
+        .visual_pc .chrome i {
+            width: 12px; height: 12px; border-radius: 50%;
+            background: #d1d5db;
+        }
+        .visual_pc .chrome i:nth-child(1) { background: #ff5f56; }
+        .visual_pc .chrome i:nth-child(2) { background: #ffbd2e; }
+        .visual_pc .chrome i:nth-child(3) { background: #27c93f; }
+        .visual_pc .chrome .url {
+            margin-left: 16px;
+            padding: 6px 14px;
+            font-size: 12px; color: var(--c-ink-3);
+            background: #fff; border-radius: var(--r-pill);
+            min-width: 240px;
+        }
+        .visual_pc .canvas {
+            aspect-ratio: 16 / 9;
+            background: var(--c-bg-sub);
+            display: grid;
+            place-items: center;
+            color: var(--c-ink-3);
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .visual_devices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .visual_tablet, .visual_mobile {
+            background: #fff;
+            border-radius: var(--r-xl);
+            padding: 32px;
+            box-shadow: var(--sh-2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .visual_tablet .frame {
+            width: 100%; aspect-ratio: 4 / 3;
+            border-radius: 18px;
+            background: var(--c-bg-sub);
+            display: grid; place-items: center;
+            color: var(--c-ink-3);
+            font-size: 14px;
+            box-shadow: inset 0 0 0 8px #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+        .visual_mobile .frame {
+            width: 220px; aspect-ratio: 9 / 19;
+            border-radius: 32px;
+            background: var(--c-bg-sub);
+            display: grid; place-items: center;
+            color: var(--c-ink-3);
+            font-size: 12px;
+            box-shadow: inset 0 0 0 8px #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+        .visual_mobile .frame::before {
+            content: ""; position: absolute; top: 10px; left: 50%;
+            transform: translateX(-50%);
+            width: 64px; height: 18px; border-radius: 12px;
+            background: #1a1a1a; z-index: 2;
+        }
+        .device_cap {
+            font-size: 12px; font-weight: 600; color: var(--c-ink-3);
+            letter-spacing: 0.08em;
+        }
+        .device_cap .num { color: var(--c-ink-1); }
+
+        /* Mock content inside frames (very light schematic) */
+        .mock {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            padding: 8%;
+            gap: 6%;
+        }
+        .mock .row { height: 10%; background: var(--c-line); border-radius: 4px; }
+        .mock .row.short { width: 40%; }
+        .mock .row.tall  { height: 30%; }
+        .mock .row.accent{ background: var(--c-point); width: 30%; height: 8%; }
+        .mock .grid {
+            flex: 1; display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 6%;
+        }
+        .mock .grid > span { background: var(--c-line-2); border-radius: 6px; }
+        .mock .grid > span:nth-child(1) { background: rgba(37,99,235,0.12); }
+
+        /* --- 7. FOOTNAV (목록보기 + TOP) --------------------------- */
+        .prj_footnav {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 16px;
+            padding-top: 80px;
+        }
+        .btn_list {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 24px;
+            font-size: 14px; font-weight: 600;
+            color: var(--c-ink-1);
+            background: #fff;
+            border-radius: var(--r-pill);
+            box-shadow: inset 0 0 0 1px var(--c-line), 0 2px 6px rgba(17,17,17,0.03);
+            transition: box-shadow .15s ease, color .15s ease;
+        }
+        .btn_list:hover { box-shadow: inset 0 0 0 1px var(--c-point), 0 2px 6px rgba(37,99,235,0.12); color: var(--c-point); }
+        .btn_list::before {
+            content: ""; width: 14px; height: 14px; background: currentColor;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M3 12h18M3 18h18'/></svg>") center/contain no-repeat;
+                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M3 12h18M3 18h18'/></svg>") center/contain no-repeat;
+        }
+        .btn_top {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 22px;
+            font-size: 12px; font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--c-ink-1);
+            background: #fff;
+            border-radius: var(--r-pill);
+            box-shadow: inset 0 0 0 1px var(--c-line), 0 2px 6px rgba(17,17,17,0.03);
+            transition: box-shadow .15s ease, color .15s ease;
+        }
+        .btn_top:hover { box-shadow: inset 0 0 0 1px var(--c-ink-1), 0 2px 6px rgba(17,17,17,0.08); }
+        .btn_top::after {
+            content: ""; width: 14px; height: 14px; background: currentColor;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 19V5M5 12l7-7 7 7'/></svg>") center/contain no-repeat;
+                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 19V5M5 12l7-7 7 7'/></svg>") center/contain no-repeat;
+        }
+
+        /* --- FOOTER ------------------------------------------------ */
+        #footer {
+            background: var(--c-bg-dark);
+            color: #fff;
+            padding: 64px 0 48px;
+        }
+        .ft_inner {
+            max-width: var(--cont-w); margin: 0 auto;
+            padding: 0 var(--gutter);
+            display: flex; flex-direction: column; gap: 32px;
+        }
+        .ft_top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            gap: 24px; flex-wrap: wrap;
+        }
+        .ft_brand .name { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+        .ft_brand .role { font-size: 13px; color: #888; margin-top: 6px; letter-spacing: 0.02em; }
+        .ft_contact { font-size: 14px; color: #888; line-height: 1.8; }
+        .ft_contact a { color: #fff; }
+        .ft_contact a:hover { color: var(--c-accent); }
+        .ft_bot { font-size: 12px; color: #555; box-shadow: 0 -1px 0 #1a1a1a; padding-top: 24px; }
+
+        /* --- NOTE BOX (work-4 disclaimer) -------------------------- */
+        .note {
+            margin-top: 24px;
+            padding: 20px 24px;
+            font-size: 13px;
+            color: var(--c-ink-2);
+            line-height: 1.7;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-md);
+            box-shadow: inset 3px 0 0 var(--c-ink-3);
+        }
+        .note .lbl {
+            display: block;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+            color: var(--c-ink-3); margin-bottom: 6px;
+        }
+
+        /* --- RESPONSIVE (640px / 1024px breakpoints) --------------- */
+        @media (max-width: 1024px) {
+            .prj_hero .tit { font-size: 40px; }
+            .goal_head .tit { font-size: 32px; }
+            .prj_meta { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 28px 32px; }
+            .prj_meta.has_site { grid-template-columns: repeat(3, 1fr); }
+
+            .intro_flow .step {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 56px 0;
+            }
+            .intro_flow .step_lbl {
+                position: static;
+                flex-direction: row;
+                align-items: center;
+            }
+            .intro_flow .stats { gap: 40px; }
+            .visual_head { gap: 16px; }
+            .visual_tabs .btn_v { padding: 8px 14px; font-size: 12px; }
+        }
+
+        @media (max-width: 640px) {
+            :root { --gutter: 20px; }
+            #container { padding: 56px 0 96px; }
+            .hd_inner { padding: 14px var(--gutter); }
+            .hd_brand { font-size: 14px; }
+            .hd_brand .role { display: none; }
+            #gnb { top: 56px; }
+            .gnb_list .btn_tab { padding: 14px 4px; margin-right: 16px; font-size: 13px; }
+
+            .prj_hero { margin: -56px 0 0; padding: 96px 0 64px; }
+            .prj_hero .hero_top { margin-bottom: 40px; }
+            .prj_hero .prj_mark { margin-bottom: 32px; font-size: 11px; }
+            .prj_hero::before { font-size: clamp(160px, 50vw, 280px); right: -4vw; bottom: -6vw; }
+            .prj_hero .sub { margin-top: 24px; font-size: 14px; }
+
+            .prj_meta { padding: 16px 0 24px; margin: 0 0 48px; gap: 0; }
+            .prj_meta > div { min-width: 50%; padding: 12px 16px 12px 0; }
+            .prj_meta > div + div { padding-left: 0; box-shadow: none; }
+            .prj_meta dt { font-size: 10px; margin-bottom: 4px; }
+            .prj_meta dd { font-size: 14px; }
+
+            .prj_intro { padding-bottom: 56px; }
+            .prj_intro .para { font-size: 15px; padding: 24px 0; line-height: 1.75; }
+            .intro_flow .step { padding: 40px 0; gap: 16px; }
+            .intro_flow .step_focus {
+                margin: 0 calc(50% - 50vw);
+                padding-left: 20px; padding-right: 20px;
+            }
+            .intro_flow .step_tit { font-size: clamp(28px, 7vw, 40px); }
+            .intro_flow .step_body .desc { font-size: 15px; }
+            .intro_flow .stats { gap: 32px; }
+            .intro_flow .stats .s_val { font-size: 36px; }
+
+            .prj_cta { padding-bottom: 56px; }
+            .btn_live { font-size: 14px; padding: 14px 22px; }
+
+            .prj_goal { padding: 64px 0; }
+            .goal_head { margin-bottom: 40px; }
+            .goal_head .eyebrow { font-size: 11px; }
+            .goal_head .tit { font-size: 22px; }
+            .goal_item {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 12px;
+                padding: 20px;
+            }
+            .goal_item .arrow { transform: rotate(0); }
+            .goal_item .arrow .x { display: none; }
+            .goal_item .arrow .y { display: block; }
+            .goal_item .pill { padding: 16px 18px; font-size: 14px; }
+
+            .prj_visual { padding: 72px 0; }
+            .visual_head .tit { font-size: 22px; }
+            .visual_devices { grid-template-columns: 1fr; gap: 20px; }
+            .visual_tablet, .visual_mobile { padding: 20px; }
+            .visual_mobile .frame { width: 180px; }
+            .visual_pc .chrome .url { display: none; }
+            .visual_tabs { width: 100%; justify-content: stretch; }
+            .visual_tabs .btn_v { flex: 1; justify-content: center; padding: 10px 6px; }
+            .visual_tablet_solo, .visual_mobile_solo { padding: 24px 16px; }
+            .visual_mobile_solo .frame { width: 240px; }
+            .visual_pc_long .scroll { max-height: 60vh; }
+
+            .prj_footnav { padding-top: 48px; flex-direction: column; }
+            .prj_footnav .btn_list, .prj_footnav .btn_top { width: 100%; justify-content: center; }
+
+            #footer { padding: 48px 0 32px; }
+            .ft_brand .name { font-size: 20px; }
+        }
+
+        /* --- VERY SMALL (320px) ------------------------------------ */
+        @media (max-width: 360px) {
+            .prj_meta { grid-template-columns: 1fr; }
+            .prj_meta.has_site { grid-template-columns: 1fr; }
+            .prj_hero .tit { font-size: 24px; }
+            .goal_head .tit { font-size: 20px; }
+        }
+
+        /* --- PRINT ------------------------------------------------- */
+        @media print {
+            #gnb, #header, .prj_footnav, #footer { display: none; }
+            .prj { display: block !important; break-after: page; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SKIP NAVIGATION
+     ============================================================ -->
+<a href="#container" class="skip">본문으로 바로가기</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="header" role="banner">
+    <div class="hd_inner">
+        <h1 class="hd_brand">
+            <span class="dot" aria-hidden="true"></span>
+            <span>PARK YIHYUN</span>
+            <span class="role">UI·UX Designer · 11Y</span>
+        </h1>
+        <a href="#" class="hd_back" aria-label="작업 목록으로 돌아가기">
+            <span aria-hidden="true">←</span>
+            <span>WORKS</span>
+        </a>
+    </div>
+</header>
+
+<!-- ============================================================
+     PROJECT TAB NAV
+     ============================================================ -->
+<nav id="gnb" aria-label="프로젝트 목록">
+    <div class="gnb_inner">
+        <ul class="gnb_list" role="tablist">
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="true"  aria-controls="work-1" data-tab="work-1">
+                    <span class="num">01</span><span>SOCAR Corp Blog</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="false" aria-controls="work-2" data-tab="work-2">
+                    <span class="num">02</span><span>GIS 수문정보시스템</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="false" aria-controls="work-3" data-tab="work-3">
+                    <span class="num">03</span><span>파트너스 ESG</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="false" aria-controls="work-4" data-tab="work-4">
+                    <span class="num">04</span><span>동반성장위원회</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="false" aria-controls="work-5" data-tab="work-5">
+                    <span class="num">05</span><span>Promotional Content</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="btn_tab" role="tab" aria-selected="false" aria-controls="work-6" data-tab="work-6">
+                    <span class="num">06</span><span>네이버페이 × 탄소중립포인트</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================
+     CONTAINER (six project articles, only one visible at a time)
+     ============================================================ -->
+<main id="container">
+
+    <!-- ========================================================
+         WORK-01 · SOCAR CORPORATE BLOG + MAIN ENTRY
+         ======================================================== -->
+    <article id="work-1" class="prj is-active" role="tabpanel" aria-labelledby="tab-work-1">
+
+        <!-- 1. HERO -->
+        <section class="prj_hero" data-no="01">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 01 · CORPORATE</p>
+                <h2 class="tit">쏘카 코퍼레이트 블로그<br />그리고 메인 진입 영역</h2>
+                <p class="sub">쏘카 디자인 시스템을 기반으로 블로그 채널을 신설하고, 메인 페이지에 진입 영역을 함께 디자인했습니다.</p>
+            </div>
+        </section>
+
+        <!-- 2. META -->
+        <section class="inner_narrow" aria-label="프로젝트 메타정보">
+            <dl class="prj_meta has_site">
+                <div>
+                    <dt>KEYWORD</dt>
+                    <dd>모빌리티 / 코퍼레이트</dd>
+                </div>
+                <div>
+                    <dt>DATE</dt>
+                    <dd>2025.12 — 2026.01</dd>
+                </div>
+                <div>
+                    <dt>SCOPE</dt>
+                    <dd>블로그 채널 신설 · 메인 진입 영역</dd>
+                </div>
+                <div>
+                    <dt>ROLE</dt>
+                    <dd>디자인 / 기획 협업</dd>
+                </div>
+                <div>
+                    <dt>SITE</dt>
+                    <dd><a href="https://socarcorp.kr/blog" target="_blank" rel="noopener noreferrer">socarcorp.kr/blog</a></dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- 3. INTRO — PPT-style 3-step process flow -->
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">블로그 채널 신설</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">블로그 채널이<br>없었습니다.</h3>
+                <p class="desc">쏘카 코퍼레이트 사이트에 블로그 채널이 없었고, 보도자료·서비스·테크·문화 등 <strong>성격이 다른 콘텐츠가 한 채널에 섞여</strong> 들어올 구조였습니다. 메인에서 콘텐츠로 진입할 동선도 없어, 독자가 쏘카의 이야기를 한눈에 보기 어려웠습니다.</p>
+                        <ul class="step_tags"><li>코퍼레이트</li><li>콘텐츠 분산</li><li>진입점 부재</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">디자인 시스템 상속,<br>채널은 신규 설계</h3>
+                        <p class="desc"><strong>쏘카 디자인 시스템을 상속</strong>해 브랜드 일관성을 유지하고, 5개 카테고리를 상단 고정 탭으로 배치했습니다. 메인 페이지에는 블로그 진입 영역을 새로 디자인했고, 카드의 정보 위계를 균일하게 정리했습니다.</p>
+                        <ul class="step_tags"><li class="is-key">디자인 시스템 상속</li><li>5 카테고리 고정 탭</li><li>카드 위계 균일화</li><li>메인 진입 영역</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">블로그 화면과<br>진입 영역 디자인</h3>
+                        <p class="desc">블로그 메인·카테고리·상세 화면, 메인 진입 영역, 카드·리스트 위계 가이드, 모바일 반응형 규칙을 정리했습니다. 운영 단계에서 카테고리가 늘어도 일관성이 유지되도록 했습니다.</p>
+                        <ul class="step_tags"><li>3 화면</li><li>1 진입 영역</li><li>카드 위계 가이드</li><li>반응형 규칙</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. CTA -->
+        <section class="prj_cta inner_narrow">
+            <a href="https://socarcorp.kr/blog" target="_blank" rel="noopener noreferrer" class="btn_live">
+                라이브 사이트 바로가기
+            </a>
+        </section>
+
+        <!-- 5. AS-IS / TO-BE -->
+        <section class="prj_goal" aria-labelledby="goal-1-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-1-tit">분산된 콘텐츠를 모으고,<br />균일한 카드 위계로 정돈</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>블로그 채널 자체가 없고 콘텐츠가 페이지마다 분산</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>5개 카테고리 고정 탭으로 단일 블로그 채널 신설</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>코퍼레이트 메인에서 콘텐츠로 가는 진입점 부재</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>메인 상단 블로그 진입 영역 신설</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>카테고리마다 카드 비율·여백이 들쭉날쭉</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>균일한 카드 위계와 반응형 규칙</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 6. BIG VISUAL — TAB VIEWER -->
+        <section class="prj_visual" aria-label="프로젝트 비주얼">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">화면 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc"><span>PC</span></button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet"><span>Tablet</span></button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile"><span>Mobile</span></button>
+                    </div>
+                </header>
+
+                <div class="visual_panels">
+                    <!-- PC -->
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div class="chrome" aria-hidden="true" style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i>
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i>
+                                <i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">socarcorp.kr/blog</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="https://socar-corp-prod.s3.ap-northeast-2.amazonaws.com/NT06/aHug6cTDSvKY863d2Tbq1c.jpg" alt="쏘카 코퍼레이트 블로그 메인 비주얼" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>1440px</strong> · 메인 + 블로그 풀페이지 — 스크롤하여 확인</p>
+                    </div>
+
+                    <!-- TABLET -->
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="쏘카 블로그 태블릿 화면 목업">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:6%;gap:4%">
+                                    <span style="height:8%;background:var(--c-line);border-radius:4px;width:30%"></span>
+                                    <span style="height:6%;background:var(--c-point);border-radius:4px;width:24%"></span>
+                                    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4%"><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드 카드 레이아웃</p>
+                    </div>
+
+                    <!-- MOBILE -->
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="쏘카 블로그 모바일 화면 목업">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:14% 8% 8%;gap:4%">
+                                    <span style="height:4%;background:var(--c-ink-1);border-radius:3px;width:40%"></span>
+                                    <span style="height:3%;background:var(--c-point);border-radius:3px;width:30%"></span>
+                                    <span style="height:14%;background:var(--c-line-2);border-radius:6px"></span>
+                                    <span style="height:14%;background:var(--c-line-2);border-radius:6px"></span>
+                                    <span style="height:14%;background:var(--c-line-2);border-radius:6px"></span>
+                                    <span style="height:14%;background:var(--c-line-2);border-radius:6px"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>375px</strong> · 1단 카드 · 고정 탭 유지</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FOOTNAV -->
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+    <!-- ========================================================
+         WORK-02 · GIS 수문정보시스템 관제 플랫폼
+         ======================================================== -->
+    <article id="work-2" class="prj" role="tabpanel" aria-labelledby="tab-work-2" hidden>
+
+        <section class="prj_hero" data-no="02">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 02 · B2B CONTROL</p>
+                <h2 class="tit">GIS 수문정보시스템<br />관제 플랫폼 디자인</h2>
+                <p class="sub">고밀도 관제 정보를 PC와 모바일에서 동일한 구조로 다룰 수 있도록 설계했습니다.</p>
+            </div>
+        </section>
+
+        <section class="inner_narrow">
+            <dl class="prj_meta">
+                <div><dt>KEYWORD</dt><dd>공공 · B2B 관제</dd></div>
+                <div><dt>DATE</dt><dd>2025.01 — 2025.03</dd></div>
+                <div><dt>SCOPE</dt><dd>관제 플랫폼 UI 디자인</dd></div>
+                <div><dt>ROLE</dt><dd>디자인 단독</dd></div>
+            </dl>
+        </section>
+
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">PC·모바일 동일 구조</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">평평한 정보 위계</h3>
+                        <p class="desc">한 화면에 너무 많은 지표가 들어가 있어 <strong>모바일에서는 사실상 사용 불가</strong>했고, 데이터 위계가 평평해 관제 담당자가 무엇부터 봐야 할지 가늠하기 어려웠습니다. 컬러도 공공 톤에 머물러 식별성이 약했습니다.</p>
+                        <ul class="step_tags"><li>고밀도 정보</li><li>모바일 가독성</li><li>보수적 컬러</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">모바일은 지도 우선,<br>데이터는 시트로</h3>
+                        <p class="desc"><strong>PC와 모바일에 같은 레이아웃 원칙</strong>을 적용했습니다. 모바일은 지도를 전체화면으로 두고 데이터 패널을 시트로 띄워 한 손 조작에 맞췄습니다. 메인 컬러로 보라색 <strong>#605BFF</strong>를 도입해 식별성을 높였습니다.</p>
+                        <ul class="step_tags"><li class="is-key">PC·모바일 동일 레이아웃</li><li>모바일 지도 풀스크린</li><li>그리드·카드 체계</li><li>#605BFF</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">관제 화면과<br>상태 컬러 체계</h3>
+                        <p class="desc">대시보드·지도·관측소 상세·알림 4개 메인 뷰의 PC/모바일 디자인, 카드·차트·지도 마커 컴포넌트, 4단 상태 컬러 시스템을 산출했습니다.</p>
+                        <ul class="step_tags"><li>4 메인 뷰</li><li>카드·차트·마커</li><li>4단 상태 컬러</li><li>반응형 가이드</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="prj_goal" aria-labelledby="goal-2-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-2-tit">고밀도 관제 정보를<br />어디서든 동일하게 다룰 수 있도록</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>한 화면에 지표를 모두 펼쳐 정보 위계가 평평</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>그리드·카드 체계로 위계 재정의</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>모바일에서 지도와 데이터가 모두 작아 가독성 저하</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>모바일 지도 전체화면 + 데이터 시트</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>보수적 공공 컬러로 식별성·집중도 부족</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>메인 컬러 #605BFF + 신호등 상태 체계</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="prj_visual">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">화면 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
+                    </div>
+                </header>
+                <div class="visual_panels">
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i><i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">gis-control · dashboard</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="images/gis.png" alt="GIS 수문정보시스템 관제 플랫폼 화면" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>1440px</strong> · 관제 대시보드 풀페이지</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="수문정보 태블릿 화면 목업">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
+                                    <span style="height:8%;background:#605BFF;border-radius:4px;width:24%"></span>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;height:18%"><span style="background:rgba(96,91,255,0.18);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
+                                    <span style="flex:1;background:rgba(96,91,255,0.12);border-radius:8px"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>768px</strong> · 지도 + 데이터 2단</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="수문정보 모바일 지도 풀스크린 + 시트">
+                                <div style="position:absolute;inset:0;background:rgba(96,91,255,0.12)"></div>
+                                <div style="position:absolute;left:8%;right:8%;bottom:8%;height:42%;background:#fff;border-radius:14px 14px 0 0;box-shadow:0 -8px 24px rgba(17,17,17,0.08);display:flex;flex-direction:column;padding:6%;gap:6%">
+                                    <span style="width:30%;height:8%;background:var(--c-line);border-radius:4px;margin:0 auto"></span>
+                                    <span style="height:10%;background:var(--c-ink-1);border-radius:4px;width:50%"></span>
+                                    <span style="height:8%;background:var(--c-line-2);border-radius:4px"></span>
+                                    <span style="height:8%;background:var(--c-line-2);border-radius:4px"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>375px</strong> · 지도 풀스크린 + 데이터 시트</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+    <!-- ========================================================
+         WORK-03 · 파트너스 ESG 홈페이지
+         ======================================================== -->
+    <article id="work-3" class="prj" role="tabpanel" aria-labelledby="tab-work-3" hidden>
+
+        <section class="prj_hero" data-no="03">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 03 · FAMILY SITE</p>
+                <h2 class="tit">파트너스 ESG 홈페이지<br />— 모기관과의 분리와 연결</h2>
+                <p class="sub">모기관의 공통 요소는 상속하고, ESG 사업의 정체성은 분리해 설계한 패밀리 사이트입니다.</p>
+            </div>
+        </section>
+
+        <section class="inner_narrow">
+            <dl class="prj_meta">
+                <div><dt>KEYWORD</dt><dd>공공 · 패밀리 사이트</dd></div>
+                <div><dt>DATE</dt><dd>2024.09 — 2025.03</dd></div>
+                <div><dt>SCOPE</dt><dd>ESG 홈페이지 UI 디자인</dd></div>
+                <div><dt>ROLE</dt><dd>디자인 단독 / 기획 협업</dd></div>
+            </dl>
+        </section>
+
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">공통 요소 상속,<br>정체성 분리</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">모기관에 묶인<br>ESG 정체성</h3>
+                        <p class="desc">파트너스 ESG는 모기관 산하 채널이면서도 <strong>고유 미션과 톤</strong>을 가져야 했지만, 기존엔 두 사이트를 오가는 동선이 끊겨 있었고, ESG 활동이 모기관의 한 메뉴로만 다뤄지고 있었습니다.</p>
+                        <ul class="step_tags"><li>패밀리 사이트</li><li>정체성 분리</li><li>동선 부재</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">공통은 상속,<br>정체성은 분리</h3>
+                        <p class="desc">공통 자산(GNB·푸터·뉴스 카드)은 그대로 상속해 일관성을 지키되, <strong>ESG 전용 컬러와 아이콘</strong>을 별도로 정의해 정체성을 분리했습니다. 두 사이트 모두 1,600px 캔버스로 통일했고, 자주 쓰이는 섹션은 컴포넌트 템플릿으로 정리했습니다.</p>
+                        <ul class="step_tags"><li>공통 요소 상속</li><li class="is-key">ESG 컬러·아이콘</li><li>1,600px 캔버스</li><li>템플릿화</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">ESG 화면과<br>컴포넌트 템플릿</h3>
+                        <p class="desc">메인·소개·ESG 활동·뉴스·문의 5개 화면, ESG 전용 일러스트/아이콘, 상호 진입 컴포넌트, 컴포넌트 템플릿 라이브러리를 산출했습니다.</p>
+                        <ul class="step_tags"><li>5 화면</li><li>ESG 아이콘 세트</li><li>상호 진입 컴포넌트</li><li>템플릿 라이브러리</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="prj_goal" aria-labelledby="goal-3-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-3-tit">공통 요소는 상속,<br />ESG 정체성은 분리</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>모기관 톤에 묻혀 ESG 정체성이 드러나지 않음</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>공통 요소 상속 + ESG 전용 컬러·아이콘</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>두 사이트 간 이동 동선 부재</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>패밀리 사이트 상호 진입 컴포넌트 신설</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>화면마다 캔버스·여백이 달라 비일관</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>1,600px 캔버스 통일 + 템플릿화</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="prj_visual">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">화면 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
+                    </div>
+                </header>
+                <div class="visual_panels">
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i><i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">partners-esg.org</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="images/work-3-pc.png" alt="파트너스 ESG 홈페이지 PC 화면" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>1600px</strong> · ESG 홈 풀페이지</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="파트너스 ESG 태블릿 목업">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
+                                    <span style="height:6%;background:var(--c-ink-1);border-radius:4px;width:24%"></span>
+                                    <span style="flex:1;background:rgba(79,209,197,0.32);border-radius:10px"></span>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;height:30%"><span style="background:var(--c-line-2);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="파트너스 ESG 모바일 화면">
+                                <img src="images/work-3-mo.png" alt="파트너스 ESG 홈페이지 모바일 화면" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top" />
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>375px</strong> · 1단 카드</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+    <!-- ========================================================
+         WORK-04 · 동반성장위원회 웹사이트 리뉴얼
+         ======================================================== -->
+    <article id="work-4" class="prj" role="tabpanel" aria-labelledby="tab-work-4" hidden>
+
+        <section class="prj_hero" data-no="04">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 04 · PUBLIC INSTITUTE</p>
+                <h2 class="tit">동반성장위원회<br />웹사이트 리뉴얼</h2>
+                <p class="sub">PC 전용이던 공공기관 사이트를 모바일까지 동일한 레이아웃으로 다시 설계했습니다.</p>
+            </div>
+        </section>
+
+        <section class="inner_narrow">
+            <dl class="prj_meta">
+                <div><dt>KEYWORD</dt><dd>공공기관</dd></div>
+                <div><dt>DATE</dt><dd>2024.05 — 2025.03</dd></div>
+                <div><dt>SCOPE</dt><dd>웹사이트 리뉴얼 UI 디자인</dd></div>
+                <div><dt>ROLE</dt><dd>디자인 단독 / 기획 협업</dd></div>
+            </dl>
+        </section>
+
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">PC 전용에서<br>반응형으로</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">PC 전용,<br>낮은 가독성</h3>
+                        <p class="desc">기존 사이트는 <strong>PC 전용으로 구축</strong>되어 모바일에서는 일부 메뉴 접근이 어려웠고, IA 깊이가 깊은 항목(공시·자료실)은 한 번에 도달하기 힘들었습니다. 본문 글자도 작아 공공 사이트가 가져야 할 가독성 기준에 못 미쳤습니다.</p>
+                        <ul class="step_tags"><li>PC 전용</li><li>깊은 IA</li><li>가독성 미달</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">본문 16px,<br>좌측 고정 GNB</h3>
+                        <p class="desc">본문 글자를 16px로 끌어올리고 1,600px 그리드를 다시 짰습니다. PC와 모바일을 같은 레이아웃 원칙으로 두고, <strong>좌측 고정 GNB</strong>로 깊은 메뉴까지 한 화면 안에서 탐색되도록 했습니다. 메인에서는 뉴스·보도자료 위계를 끌어올렸습니다.</p>
+                        <ul class="step_tags"><li class="is-key">본문 16px</li><li>1,600 그리드</li><li>좌측 고정 GNB</li><li>뉴스 위계 상향</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">주요 화면과<br>GNB·카드 시스템</h3>
+                        <p class="desc">메인·소개·사업·자료실·문의 5개 화면, 좌측 고정 GNB 컴포넌트, 뉴스/보도자료 카드 시스템, 모바일 반응형 가이드를 산출했습니다.</p>
+                        <ul class="step_tags"><li>5 화면</li><li>고정 GNB</li><li>뉴스 카드 시스템</li><li>반응형 가이드</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <aside class="note inner_narrow" role="note">
+            <span class="lbl">NOTE</span>
+            본 산출물은 <strong>설계 단계에서의 본인 의사결정 기반 디자인</strong>입니다. 실제 운영 디자인은 이후 외부 카피 방향으로 전환되어, 본 페이지에 담은 산출물과는 다를 수 있음을 밝힙니다.
+        </aside>
+
+
+        <section class="prj_goal" aria-labelledby="goal-4-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-4-tit">PC 전용을 벗어나,<br />같은 레이아웃으로 어디서든</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>PC 전용 구축 — 모바일에서 일부 메뉴 접근 곤란</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>PC·모바일 동일 레이아웃 원칙</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>본문 글자가 작아 가독성 기준 미달</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>본문 16px · 1,600px 그리드</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>깊은 IA 탐색 곤란, 뉴스 위계 흐릿</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>좌측 고정 GNB + 뉴스·보도자료 위계 상향</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="prj_visual">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">화면 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
+                    </div>
+                </header>
+                <div class="visual_panels">
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i><i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">winwingrowth.or.kr</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="images/work-4-pc.png" alt="동반성장위원회 웹사이트 PC 화면" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>1600px</strong> · 좌측 고정 GNB + 메인 풀페이지</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="동반성장위원회 태블릿 화면">
+                                <img src="images/work-4-tablet.png" alt="동반성장위원회 웹사이트 태블릿 화면" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top" />
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>768px</strong> · 햄버거 메뉴로 GNB 수렴</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="동반성장위원회 모바일 화면">
+                                <img src="images/work-4-mo.png" alt="동반성장위원회 웹사이트 모바일 화면" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top" />
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>375px</strong> · 1단 카드 · 본문 16px 유지</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+    <!-- ========================================================
+         WORK-05 · Promotional Content Design
+         ======================================================== -->
+    <article id="work-5" class="prj" role="tabpanel" aria-labelledby="tab-work-5" hidden>
+
+        <section class="prj_hero" data-no="05">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 05 · CONTENT DESIGN</p>
+                <h2 class="tit">Promotional<br />Content Design</h2>
+                <p class="sub">카드뉴스·EDM·웹 배너를 하나의 디자인 시스템 안에서 제작한 작업입니다.</p>
+            </div>
+        </section>
+
+        <section class="inner_narrow">
+            <dl class="prj_meta">
+                <div><dt>KEYWORD</dt><dd>콘텐츠 · 홍보 디자인</dd></div>
+                <div><dt>CHANNEL</dt><dd>카드뉴스 · EDM · 웹 배너</dd></div>
+                <div><dt>SCOPE</dt><dd>콘텐츠 디자인</dd></div>
+                <div><dt>ROLE</dt><dd>디자인 단독</dd></div>
+            </dl>
+        </section>
+
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">채널별 제작,<br>일관된 톤</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">채널별 가이드 부재</h3>
+                        <p class="desc">카드뉴스·EDM·배너 등 채널별 홍보물에 <strong>일관된 가이드가 없어</strong> 같은 메시지가 채널마다 다르게 보였습니다. 시스템 컬러·타이포와 분리된 톤으로 만들어진 콘텐츠가 많아 메시지 도달률도 낮았습니다.</p>
+                        <ul class="step_tags"><li>가이드 부재</li><li>시스템 분리</li><li>낮은 도달률</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">시스템은 공유,<br>그리드는 채널별</h3>
+                        <p class="desc">채널별 그리드(카드뉴스·EDM·배너)를 따로 정의하되, <strong>디자인 시스템의 컬러와 타이포는 공유</strong>하도록 묶었습니다. 모든 콘텐츠를 <strong>헤드라인 — 서브 — CTA 3단</strong> 구조로 정리했습니다.</p>
+                        <ul class="step_tags"><li>채널별 그리드</li><li class="is-key">시스템 컬러·타이포 공유</li><li>헤드라인 → CTA 3단</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">카드뉴스·EDM·<br>배너 산출물</h3>
+                        <p class="desc">카드뉴스 템플릿(정사각·세로형), EDM 마스터 템플릿, 사이즈별 배너 가이드(웹·SNS), 컬러·타이포·CTA 컴포넌트 사용 규칙을 정리해 산출했습니다.</p>
+                        <ul class="step_tags"><li>카드뉴스 2종</li><li>EDM 마스터</li><li>배너 가이드</li><li>컴포넌트 규칙</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="prj_goal" aria-labelledby="goal-5-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-5-tit">채널은 분리하되,<br />톤은 하나로 묶는다</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>채널별 가이드 부재 — 같은 메시지가 다르게 표현</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>채널별 그리드(카드뉴스·EDM·배너) 정의</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>디자인 시스템과 분리된 톤</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>시스템 컬러·타이포를 모든 채널에서 공유</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>메시지 도달률이 낮고 위계가 흐릿</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>헤드라인 — 서브 — CTA 3단 구조</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="prj_visual">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">템플릿 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="채널 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">EDM</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">카드뉴스</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">배너</button>
+                    </div>
+                </header>
+                <div class="visual_panels">
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i><i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">EDM · master template</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="images/thum_05.png" alt="Promotional Content — 카드뉴스·EDM·웹 배너 산출물" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>Promotional</strong> · 카드뉴스 · EDM · 웹 배너 산출물</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="카드뉴스 정사각 템플릿" style="aspect-ratio:1/1;max-width:520px">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:10%;gap:5%">
+                                    <span style="height:5%;background:var(--c-point);border-radius:3px;width:24%"></span>
+                                    <span style="height:14%;background:var(--c-ink-1);border-radius:4px;width:80%"></span>
+                                    <span style="height:14%;background:var(--c-ink-1);border-radius:4px;width:60%"></span>
+                                    <span style="flex:1;background:var(--c-line-2);border-radius:8px"></span>
+                                    <span style="height:8%;background:var(--c-ink-1);border-radius:999px;width:40%"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>1080×1080</strong> · 카드뉴스 정사각</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="세로형 배너 템플릿">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:14% 10% 8%;gap:4%">
+                                    <span style="height:4%;background:var(--c-point);border-radius:3px;width:34%"></span>
+                                    <span style="height:8%;background:var(--c-ink-1);border-radius:4px;width:90%"></span>
+                                    <span style="height:8%;background:var(--c-ink-1);border-radius:4px;width:60%"></span>
+                                    <span style="flex:1;background:var(--c-line-2);border-radius:8px"></span>
+                                    <span style="height:8%;background:var(--c-point);border-radius:999px"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>1080×1920</strong> · 세로형 배너</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+    <!-- ========================================================
+         WORK-06 · 네이버페이 × 탄소중립포인트 캠페인
+         ======================================================== -->
+    <article id="work-6" class="prj" role="tabpanel" aria-labelledby="tab-work-6" hidden>
+
+        <section class="prj_hero" data-no="06">
+            <div class="inner_narrow">
+                <p class="prj_mark">WORK · 06 · CAMPAIGN LANDING</p>
+                <h2 class="tit">네이버페이 × 탄소중립포인트<br />캠페인 페이지</h2>
+                <p class="sub">복잡한 포인트 전환 절차를 모바일 세로 1단 흐름으로 정리한 캠페인 랜딩입니다.</p>
+            </div>
+        </section>
+
+        <section class="inner_narrow">
+            <dl class="prj_meta">
+                <div><dt>KEYWORD</dt><dd>공공 캠페인 · 랜딩</dd></div>
+                <div><dt>DATE</dt><dd>2023</dd></div>
+                <div><dt>SCOPE</dt><dd>캠페인 랜딩 디자인 · 반응형 퍼블리싱</dd></div>
+                <div><dt>ROLE</dt><dd>디자인 + 반응형 퍼블리싱 단독</dd></div>
+            </dl>
+        </section>
+
+
+                <section class="prj_intro inner" aria-label="프로젝트 설명">
+            <header class="intro_head">
+                <div>
+                    <p class="eyebrow">(STORY · 01 → 02 → 03)</p>
+                    <h2 class="tit">복잡한 절차를<br>단계별로</h2>
+                </div>
+            </header>
+            <div class="intro_flow">
+                <article class="step">
+                    <div class="step_lbl" data-num="01"><span class="tag">BRIEF</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">높은 진입 장벽</h3>
+                        <p class="desc">탄소중립포인트는 전환 절차가 복잡해 <strong>일반 사용자에게 진입 장벽이 높은 캠페인</strong>이었습니다. 기존 안내 페이지는 단계 시각화가 없고, 가장 중요한 CTA가 페이지 깊은 곳에 묻혀 있었습니다.</p>
+                        <ul class="step_tags"><li>복잡한 절차</li><li>시각화 부재</li><li>약한 진입점</li></ul>
+                    </div>
+                </article>
+                <article class="step step_focus">
+                    <div class="step_lbl" data-num="02"><span class="tag">DECISIONS</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">모바일 세로 1단,<br>단계별 가이드</h3>
+                        <p class="desc">모바일 기준 <strong>세로 1단 레이아웃</strong>으로, 정보 흐름을 제도 소개 → 참여 방법 → 단계 가이드 → CTA 4단으로 단순화했습니다. 단계마다 <strong>실제 UI 캡처</strong>를 가공해 화면을 미리 보여줬고, CTA는 상·하단 두 곳에 배치했습니다.</p>
+                        <ul class="step_tags"><li class="is-key">모바일 세로 1단</li><li>실 UI 캡처 가공</li><li>N마크 + 일러스트</li><li>상·하단 CTA</li></ul>
+                    </div>
+                </article>
+                <article class="step step_out">
+                    <div class="step_lbl" data-num="03"><span class="tag">DELIVERABLES</span></div>
+                    <div class="step_body">
+                        <h3 class="step_tit">디자인부터<br>퍼블리싱까지</h3>
+                        <p class="desc">메인 랜딩 페이지의 디자인과 반응형 퍼블리싱을 1인이 단독으로 진행했습니다. 단계 가이드 컴포넌트, 실 UI 캡처 가공물, N마크 + 일러스트 시각 자산을 포함합니다.</p>
+                        <ul class="step_tags"><li>1 페이지</li><li>4단계 가이드</li><li>반응형 퍼블리싱</li><li>시각 자산</li></ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="prj_goal" aria-labelledby="goal-6-tit">
+            <div class="inner">
+                <header class="goal_head">
+                    <p class="eyebrow">Project Goal</p>
+                    <h3 class="tit" id="goal-6-tit">복잡한 전환 절차를<br />단계별 흐름으로</h3>
+                </header>
+                <ol class="goal_list">
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>복잡한 전환 절차로 사용자가 중도 이탈</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>모바일 세로 1단 단계 가이드</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>단계 시각화·실 UI 예시 부재</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>제도 → 참여 → 단계 → CTA 흐름 + 실 UI 가공</div>
+                    </li>
+                    <li class="goal_item">
+                        <div class="pill pill_asis"><span class="lbl">AS-IS</span>약한 진입점 — CTA가 한 곳에만 묻혀 있음</div>
+                        <span class="arrow" aria-hidden="true">
+                            <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <svg class="y" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                        </span>
+                        <div class="pill pill_tobe"><span class="lbl">TO-BE</span>상·하단 CTA 2곳 + N마크·일러스트 강조</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="prj_visual">
+            <div class="inner">
+                <header class="visual_head">
+                    <div class="head_l">
+                        <p class="eyebrow">Deliverables</p>
+                        <h3 class="tit">화면 미리보기</h3>
+                    </div>
+                    <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
+                        <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
+                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
+                    </div>
+                </header>
+                <div class="visual_panels">
+                    <div class="visual_pane is-active" data-vpane="pc" role="tabpanel">
+                        <figure class="visual_pc_long">
+                            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f3f4f6;box-shadow:0 1px 0 rgba(17,17,17,0.04)">
+                                <i style="width:12px;height:12px;border-radius:50%;background:#ff5f56"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffbd2e"></i><i style="width:12px;height:12px;border-radius:50%;background:#27c93f"></i>
+                                <span style="margin-left:16px;padding:6px 14px;font-size:12px;color:var(--c-ink-3);background:#fff;border-radius:999px">campaign · 탄소중립포인트</span>
+                            </div>
+                            <div class="scroll">
+                                <img src="images/work-6-naverpay-pc.png" alt="네이버페이 × 탄소중립포인트 캠페인 PC 화면" loading="lazy" style="display:block;width:100%" />
+                            </div>
+                        </figure>
+                        <p class="visual_caption"><strong>1440px</strong> · 캠페인 랜딩 풀페이지 · 상·하단 CTA</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
+                        <div class="visual_tablet_solo">
+                            <div class="frame" role="img" aria-label="캠페인 태블릿 목업">
+                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
+                                    <span style="height:6%;background:#03C75A;border-radius:4px;width:20%"></span>
+                                    <span style="height:30%;background:linear-gradient(135deg,#E8F8EF,#F0F4FF);border-radius:10px"></span>
+                                    <span style="height:8%;background:var(--c-point);border-radius:999px;width:40%;margin:0 auto"></span>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;flex:1"><span style="background:var(--c-line-2);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드</p>
+                    </div>
+                    <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
+                        <div class="visual_mobile_solo">
+                            <div class="frame" role="img" aria-label="캠페인 모바일 화면">
+                                <img src="images/work-6-naverpay-mo.png" alt="네이버페이 × 탄소중립포인트 캠페인 모바일 화면" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top" />
+                            </div>
+                        </div>
+                        <p class="visual_caption"><strong>375px</strong> · 1단 · 4단계 가이드 · 상·하단 CTA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="prj_footnav inner" aria-label="페이지 하단 네비게이션">
+            <a href="#" class="btn_list">작업 목록 보기</a>
+            <button type="button" class="btn_top">TOP</button>
+        </nav>
+    </article>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+    <div class="ft_inner">
+        <div class="ft_top">
+            <div class="ft_brand">
+                <p class="name">PARK YIHYUN</p>
+                <p class="role">UI·UX Designer &amp; Front-end Publisher · 2014 — 2026</p>
+            </div>
+            <address class="ft_contact" style="font-style:normal">
+                <p>EMAIL · <a href="mailto:ihyeonp1103@gmail.com">ihyeonp1103@gmail.com</a></p>
+                <p>GITHUB · <a href="https://github.com/yihyun-park" target="_blank" rel="noopener noreferrer">github.com/yihyun-park</a></p>
+            </address>
+        </div>
+        <p class="ft_bot">© 2026 PARK YIHYUN. All artworks shown are personal documentation of professional work.</p>
+    </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPT (tab switching + hash routing + TOP)
+     ============================================================ -->
+<script>
+    (function () {
+        'use strict';
+
+        var tabs    = document.querySelectorAll('.btn_tab');
+        var panels  = document.querySelectorAll('.prj');
+        var listBtns= document.querySelectorAll('.btn_list');
+        var topBtns = document.querySelectorAll('.btn_top');
+        var backBtn = document.querySelector('.hd_back');
+
+        function activate(id, opts) {
+            opts = opts || {};
+            var found = false;
+            tabs.forEach(function (t) {
+                var match = t.getAttribute('data-tab') === id;
+                t.setAttribute('aria-selected', match ? 'true' : 'false');
+                if (match) found = true;
+            });
+            if (!found) {
+                // fallback to first
+                id = tabs[0].getAttribute('data-tab');
+                tabs[0].setAttribute('aria-selected', 'true');
+            }
+            panels.forEach(function (p) {
+                var match = p.id === id;
+                p.classList.toggle('is-active', match);
+                if (match) { p.removeAttribute('hidden'); }
+                else       { p.setAttribute('hidden', ''); }
+            });
+
+            // update hash without jumping
+            if (opts.pushHash !== false) {
+                if (history.replaceState) {
+                    history.replaceState(null, '', '#' + id);
+                } else {
+                    location.hash = id;
+                }
+            }
+
+            // scroll to top of panel area
+            if (opts.scroll !== false) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Tab clicks
+        tabs.forEach(function (t) {
+            t.addEventListener('click', function () {
+                activate(t.getAttribute('data-tab'));
+            });
+            // keyboard arrow nav
+            t.addEventListener('keydown', function (e) {
+                var items = Array.prototype.slice.call(tabs);
+                var i = items.indexOf(t);
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    var n = items[(i + 1) % items.length];
+                    n.focus(); activate(n.getAttribute('data-tab'));
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    var p = items[(i - 1 + items.length) % items.length];
+                    p.focus(); activate(p.getAttribute('data-tab'));
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    items[0].focus(); activate(items[0].getAttribute('data-tab'));
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    var last = items[items.length - 1];
+                    last.focus(); activate(last.getAttribute('data-tab'));
+                }
+            });
+        });
+
+        // 목록보기 → 첫 프로젝트로 + scroll top
+        listBtns.forEach(function (b) {
+            b.addEventListener('click', function (e) {
+                e.preventDefault();
+                activate('work-1');
+            });
+        });
+        if (backBtn) {
+            backBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                activate('work-1');
+            });
+        }
+
+        // TOP 버튼
+        topBtns.forEach(function (b) {
+            b.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Hash routing on load + popstate
+        function fromHash() {
+            var id = (location.hash || '').replace('#', '');
+            if (id && document.getElementById(id) && id.indexOf('work-') === 0) {
+                activate(id, { pushHash: false, scroll: false });
+            } else {
+                activate('work-1', { pushHash: false, scroll: false });
+            }
+        }
+        window.addEventListener('hashchange', fromHash);
+        fromHash();
+
+        // ----- Visual resolution tabs (PC / Tablet / Mobile) -----
+        document.querySelectorAll('.prj_visual').forEach(function (section) {
+            var vtabs  = section.querySelectorAll('.btn_v');
+            var vpanes = section.querySelectorAll('.visual_pane');
+            vtabs.forEach(function (t) {
+                t.addEventListener('click', function () {
+                    var key = t.getAttribute('data-vtab');
+                    vtabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+                    vpanes.forEach(function (p) {
+                        var match = p.getAttribute('data-vpane') === key;
+                        p.classList.toggle('is-active', match);
+                        if (match) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+                    });
+                });
+                t.addEventListener('keydown', function (e) {
+                    var items = Array.prototype.slice.call(vtabs);
+                    var i = items.indexOf(t);
+                    if (e.key === 'ArrowRight') { e.preventDefault(); items[(i + 1) % items.length].click(); items[(i + 1) % items.length].focus(); }
+                    else if (e.key === 'ArrowLeft') { e.preventDefault(); items[(i - 1 + items.length) % items.length].click(); items[(i - 1 + items.length) % items.length].focus(); }
+                });
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Local helper scripts & logs (not part of the site)
+_push*.bat
+_push*.log
+_vercel.bat
+_vercel.log
+
+# OS files
+.DS_Store
+Thumbs.db
