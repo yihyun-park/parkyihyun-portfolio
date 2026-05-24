@@ -3,173 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>쏘카 코퍼레이트 블로그 + 메인 진입 영역 디자인 · 박이현 Portfolio</title>
+<title>쏘카 코퍼레이트 블로그 — 블로그를 더하다 · 박이현 Portfolio</title>
 
-<meta name="description" content="쏘카 코퍼레이트 사이트에 신설된 블로그 채널 — 기존 쏘카 디자인 시스템을 반영한 블로그 내부 레이아웃과 메인 페이지의 블로그 진입 영역까지 함께 작업.">
+<meta name="description" content="쏘카 코퍼레이트 사이트에 신설된 블로그 채널 — 기존 쏘카 디자인 시스템을 반영한 블로그 내부 레이아웃과 메인 페이지의 블로그 진입 영역까지 함께 작업한 케이스 스터디.">
 <meta name="keywords" content="쏘카, SOCAR, 코퍼레이트 블로그, 쏘카 디자인 시스템, 블로그 신설, 모빌리티, UIUX, 반응형 웹, 박이현">
 <meta name="author" content="박이현 (Park Yihyun)">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 <meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://park-yihyun.com/work-1.html">
 
 <meta property="og:title" content="쏘카 코퍼레이트 블로그 · 박이현 Portfolio">
 <meta property="og:description" content="쏘카 디자인 시스템 기반 블로그 신설 + 메인 진입 영역 · 2025.12 – 2026.01">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://park-yihyun.com/work-1.html">
+<meta property="og:image" content="https://park-yihyun.com/images/socar-pc.png">
+<meta property="og:image:alt" content="쏘카 코퍼레이트 블로그 PC 메인">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Park Yihyun Portfolio">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="쏘카 코퍼레이트 블로그 · 박이현 Portfolio">
+<meta name="twitter:description" content="쏘카 디자인 시스템 기반 블로그 신설 케이스 스터디">
+<meta name="twitter:image" content="https://park-yihyun.com/images/socar-pc.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "쏘카 코퍼레이트 블로그",
+  "creator": { "@type": "Person", "name": "박이현" },
+  "dateCreated": "2025-12",
+  "description": "쏘카 코퍼레이트 사이트의 신규 블로그 채널과 메인 진입 영역을 디자인·퍼블리싱한 케이스 스터디",
+  "inLanguage": "ko-KR",
+  "url": "https://park-yihyun.com/work-1.html"
+}
+</script>
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paperlogy:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a href="#container" class="skip">본문 바로가기</a>
 
+<!-- bg decoration -->
 <div class="blob a" aria-hidden="true"></div>
 <div class="blob b" aria-hidden="true"></div>
 
+<!-- scroll progress -->
 <div class="prog" aria-hidden="true"></div>
 
 <!-- header -->
 <header id="header">
   <div class="hd_in">
-    <a href="index.html" class="logo" aria-label="홈으로">PARK YIHYUN</a>
-    <nav aria-label="주요 메뉴">
+    <a href="index.html" class="logo" aria-label="홈으로">
+      PARK<span class="lg_dot" aria-hidden="true">·</span>YH
+    </a>
+    <nav class="hd_nav" aria-label="주요 메뉴">
       <ul class="gnb_lst" role="list">
+        <li><a href="index.html" class="gnb_lk">Index</a></li>
         <li><a href="index.html#about" class="gnb_lk">About</a></li>
-        <li><a href="index.html#work" class="gnb_lk">Work</a></li>
+        <li><a href="index.html#work" class="gnb_lk on">Work</a></li>
         <li><a href="index.html#contact" class="gnb_lk">Contact</a></li>
       </ul>
     </nav>
+    <a href="mailto:forestmm@naver.com" class="hd_cta" aria-label="이메일 보내기">
+      <span class="hd_cta_txt">forestmm@naver.com</span>
+      <span class="hd_cta_btn" aria-hidden="true">↗</span>
+    </a>
+    <button type="button" class="hd_burger" aria-label="메뉴 열기" aria-controls="mo_drawer" aria-expanded="false">
+      <span class="bg_ln" aria-hidden="true"></span>
+      <span class="bg_ln" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 <!--// header -->
 
+<!-- mobile drawer -->
+<aside id="mo_drawer" class="mo_drawer" aria-hidden="true">
+  <nav aria-label="모바일 주요 메뉴">
+    <ul class="mo_lst" role="list">
+      <li><a href="index.html" class="mo_lk">Index</a></li>
+      <li><a href="index.html#about" class="mo_lk">About</a></li>
+      <li><a href="index.html#work" class="mo_lk">Work</a></li>
+      <li><a href="index.html#contact" class="mo_lk">Contact</a></li>
+    </ul>
+    <a class="mo_mail" href="mailto:forestmm@naver.com">forestmm@naver.com</a>
+  </nav>
+</aside>
+<!--// mobile drawer -->
+
 <!-- container -->
 <main id="container">
 
-  <!-- back nav -->
-  <div class="inn bk_nav">
-    <a href="index.html#work" class="lnk_bk">작업 리스트</a>
-  </div>
-
-  <!-- detail -->
-  <section id="detail" aria-labelledby="dt_tit">
-    <div class="dt_in">
-
-      <div class="dt_top fade">
-        <span class="mark">SOCAR</span>
-        <h1 id="dt_tit" class="tit">쏘카 코퍼레이트 블로그 + 메인 진입 영역 디자인</h1>
+  <!-- prj_hero -->
+  <section class="prj_hero" aria-labelledby="prj_tit">
+    <div class="inn">
+      <div class="prj_eye fade" style="--i: 0">
+        <a href="index.html#work" class="prj_back">← Selected Work</a>
+        <span class="prj_no">01 — Corporate / Design System</span>
       </div>
-
-      <dl class="dt_meta fade">
-        <div class="row">
-          <dt class="lbl">KEYWORD</dt>
-          <dd class="val">
-            <ul class="tag_lst">
-              <li>쏘카</li><li>SOCAR</li><li>코퍼레이트블로그</li>
-              <li>쏘카디자인시스템</li><li>블로그신설</li>
-              <li>모빌리티</li><li>UIUX</li><li>반응형웹</li>
-            </ul>
-          </dd>
+      <div class="prj_hd">
+        <h1 id="prj_tit" class="prj_tit fade" style="--i: 1">쏘카 코퍼레이트 블로그</h1>
+        <p class="prj_subtit fade" style="--i: 1">쏘카 코퍼레이트 사이트에 <span class="accent">블로그 채널을 신설</span>하고 메인 진입 영역을 함께 설계했습니다.</p>
+        <p class="prj_intro fade" style="--i: 2">
+          쏘카 코퍼레이트 사이트에 신규 <b>블로그 채널</b>을 도입하고, 메인 페이지에서 블로그로 진입하는 동선까지 함께 설계했습니다. 기존 쏘카 디자인 시스템과 시각적·구조적 일관성을 유지하는 것이 핵심 과제였습니다.
+        </p>
+      </div>
+      <dl class="prj_meta fade" style="--i: 3">
+        <div class="prj_meta_it">
+          <dt>의뢰처</dt><dd>쏘카 (SOCAR)</dd>
         </div>
-        <div class="row">
-          <dt class="lbl">DATE</dt>
-          <dd class="val">2025.12 – 2026.01</dd>
+        <div class="prj_meta_it">
+          <dt>작업기간</dt><dd>2025.12 — 2026.01.20</dd>
         </div>
-        <div class="row">
-          <dt class="lbl">SCOPE</dt>
-          <dd class="val">블로그 채널 신설 디자인 + 쏘카 메인 페이지의 블로그 진입 영역 디자인</dd>
+        <div class="prj_meta_it">
+          <dt>역할</dt><dd>UI/UX + 기획 협업</dd>
         </div>
-        <div class="row">
-          <dt class="lbl">ROLE</dt>
-          <dd class="val">디자인 / 기획 협업</dd>
-        </div>
-        <div class="row">
-          <dt class="lbl">SITE</dt>
-          <dd class="val">
-            <a href="https://www.socarcorp.kr/blog" target="_blank" rel="noopener noreferrer" class="lnk">www.socarcorp.kr/blog ↗</a>
-          </dd>
+        <div class="prj_meta_it">
+          <dt>라이브 사이트</dt><dd><a href="https://www.socarcorp.kr/blog" target="_blank" rel="noopener noreferrer" class="meta_lk">socarcorp.kr/blog ↗</a></dd>
         </div>
       </dl>
-
-      <div class="dt_desc fade">
-        <p>
-          쏘카 코퍼레이트 사이트에 블로그 채널이 신설되면서, 기존 쏘카 디자인
-          시스템과의 시각적·구조적 일관성을 유지하는 것이 핵심 과제였습니다.
-          보도자료·서비스·테크·문화 등 성격이 서로 다른 콘텐츠가 한 채널에
-          모이는 구조였기 때문에, 외부 미디어·투자자·구직자 등 다양한 독자가
-          빠르게 원하는 영역에 도달할 수 있도록 정보 구조 정리와 함께, 쏘카
-          브랜드 톤을 그대로 잇는 시각 위계 설계가 필요했습니다.
-        </p>
-        <p>
-          블로그 내부 레이아웃·타이포그래피·컴포넌트는 기존 쏘카 디자인
-          시스템을 그대로 반영해, 메인 사이트와 블로그 사이에서 사용자가
-          이질감을 느끼지 않도록 설계했습니다. 5개 콘텐츠 카테고리
-          (전체·서비스·테크·문화·보도자료)를 상단 고정 탭으로 배치해 진입
-          직후 원하는 영역으로 이동할 수 있도록 IA를 단순화했고, 카드형
-          아티클 리스트로 일자·제목·요약·카테고리 태그를 균일한 위계로
-          정렬해 제목 길이가 달라도 시각적 균형이 유지되도록 그리드를 정의했습니다.
-        </p>
-        <p>
-          블로그 채널 자체뿐 아니라 쏘카 메인 페이지에 블로그 진입점이 되는
-          블로그 탭 영역도 함께 디자인해, 사용자가 메인에서 블로그로 자연스럽게
-          유입되도록 진입 동선을 통합 설계했습니다. PC와 모바일 양쪽에서 카드
-          리스트의 가독성과 스캔 효율을 모두 확보하도록 반응형 분기점도 함께
-          잡았습니다.
-        </p>
-      </div>
-
-      <div class="dt_compare fade">
-        <div class="comp_head">
-          <span class="comp_eyebrow">Project Goal</span>
-          <h3 class="comp_tit">쏘카 디자인 시스템과의 일관성을 유지하며 블로그 채널을 신설하는 방향으로</h3>
-        </div>
-        <div class="comp_grid">
-          <div class="pill asis">쏘카 코퍼레이트 사이트에 <strong>블로그 채널 부재</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">쏘카 디자인 시스템 기반 블로그 채널 신설<br>메인 사이트와 시각적 일관성 유지</div>
-
-          <div class="pill asis">보도자료·콘텐츠가 단일 채널에 <strong>분산 노출</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">5개 카테고리(전체·서비스·테크·문화·보도자료)<br>상단 고정 탭으로 IA 단순화</div>
-
-          <div class="pill asis">메인 페이지에 <strong>블로그 진입점 없음</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">쏘카 메인 페이지에 블로그 탭 영역 신규 디자인<br>메인 → 블로그 진입 동선 통합 설계</div>
-
-          <div class="pill asis">카드 디자인의 <strong>위계 일관성 부족</strong> 가능성</div>
-          <div class="arrow"></div>
-          <div class="pill tobe">일자·제목·요약·태그를 균일한 위계로 정렬<br>제목 길이가 달라도 시각 균형 유지</div>
-        </div>
-      </div>
-
-      <div class="cta_wrap fade">
-        <a class="cta" href="https://www.socarcorp.kr/blog" target="_blank" rel="noopener noreferrer">사이트 바로가기</a>
-      </div>
-
-    </div>
-
-    <!-- big visual -->
-    <div class="vis fade">
-      <figure class="big">
-        <div class="big_bx">
-          <img src="https://socar-corp-prod.s3.ap-northeast-2.amazonaws.com/NT06/aHug6cTDSvKY863d2Tbq1c.jpg" alt="쏘카 코퍼레이트 블로그 메인 비주얼" loading="lazy">
-        </div>
-        <figcaption>쏘카 코퍼레이트 블로그 · 메인 비주얼</figcaption>
-      </figure>
     </div>
   </section>
-  <!--// detail -->
+  <!--// prj_hero -->
 
-  <!-- pager -->
-  <section class="pgr">
-    <div class="inn pgr_in">
-      <a href="index.html#work" class="btn_list">목록보기</a>
-      <a href="#header" class="btn_top">TOP</a>
+
+
+  <!-- 01. 문제 -->
+  <section class="prj_sec" aria-labelledby="p_problem">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">01</span>
+        <h2 id="p_problem" class="prj_h_tit">콘텐츠는 많은데,<br>채널이 없었다.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        보도자료 · 서비스 소개 · 테크 인사이트 · 사내 문화 등 성격이 다른 콘텐츠가 한 채널에 모이는 구조였습니다. 외부 미디어 · 투자자 · 구직자 등 <b>다양한 독자가 빠르게 원하는 영역에 도달</b>할 수 있는 채널이 필요했습니다.
+      </p>
+      <ul class="prj_card4 fade" style="--i: 2" role="list">
+        <li>
+          <span class="card_ico" data-icon="news" aria-hidden="true"></span>
+          <h3 class="card_tit">블로그 채널 부재</h3>
+          <p class="card_desc">쏘카 코퍼레이트 사이트에 블로그 영역이 없어 콘텐츠 게시가 어려운 상태</p>
+        </li>
+        <li>
+          <span class="card_ico" data-icon="shuffle" aria-hidden="true"></span>
+          <h3 class="card_tit">콘텐츠 분산 노출</h3>
+          <p class="card_desc">서비스·테크·문화·보도자료가 단일 채널에 섞여 독자별 탐색 어려움</p>
+        </li>
+        <li>
+          <span class="card_ico" data-icon="open" aria-hidden="true"></span>
+          <h3 class="card_tit">메인 진입점 없음</h3>
+          <p class="card_desc">메인 페이지에서 블로그로 이어지는 동선이 마련돼 있지 않음</p>
+        </li>
+        <li>
+          <span class="card_ico" data-icon="group" aria-hidden="true"></span>
+          <h3 class="card_tit">카드 위계 일관성</h3>
+          <p class="card_desc">제목 길이가 달라도 시각 균형을 유지할 카드 그리드 정의 필요</p>
+        </li>
+      </ul>
     </div>
   </section>
-  <!--// pager -->
+
+  <!-- 02. 화면 -->
+  <section class="prj_sec" aria-labelledby="p_screen">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">02</span>
+        <h2 id="p_screen" class="prj_h_tit">두 영역,<br>한 인상의 디자인.</h2>
+      </div>
+
+      <p class="prj_h_desc fade" style="--i: 1">
+        5개 카테고리 탭 (전체·서비스·테크·문화·보도자료) + 카드 시스템. PC와 Mobile에서 동일한 위계로 풀어냈습니다.
+      </p>
+      <div class="prj_tabs fade" style="--i: 2">
+        <div class="tab_nav" role="tablist" aria-label="해상도 선택">
+          <button type="button" class="tab on" data-tab="pc" role="tab" aria-selected="true">PC</button>
+          <button type="button" class="tab" data-tab="mo" role="tab" aria-selected="false">Mobile</button>
+        </div>
+        <div class="tab_panels">
+          <div class="tab_panel on" data-tab="pc" role="tabpanel">
+            <figure class="panel_pc"><img src="images/socar-pc.png" alt="쏘카 코퍼레이트 블로그 — PC" loading="lazy"></figure>
+          </div>
+          <div class="tab_panel" data-tab="mo" role="tabpanel">
+            <figure class="panel_mo"><img src="images/socar-mo.png" alt="쏘카 코퍼레이트 블로그 — Mobile" loading="lazy"></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. 의사결정 -->
+  <section class="prj_sec" aria-labelledby="p_dcs">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">03</span>
+        <h2 id="p_dcs" class="prj_h_tit">3개의 디자인 의사결정,<br>왜 이렇게 만들었는지.</h2>
+      </div>
+      <div class="prj_dcs3 fade" style="--i: 1">
+        <article class="dcs_it">
+          <h3 class="dcs_tit">쏘카 디자인 시스템 그대로 상속</h3>
+          <p class="dcs_desc">컬러·타이포·컴포넌트를 신규로 만들지 않고 메인 사이트와 동일하게 상속. 사용자가 메인 ↔ 블로그를 오가도 이질감이 없습니다.</p>
+          <div class="dcs_vis dcs_vis_a"><span class="dv_no">01</span><span class="dv_kw">Inherit System</span></div>
+        </article>
+        <article class="dcs_it">
+          <h3 class="dcs_tit">5개 고정 카테고리 탭</h3>
+          <p class="dcs_desc">필터 드롭다운 대신 상단 고정 탭으로 단순화. 외부 미디어 · 투자자 · 구직자가 원하는 영역에 한 번에 도달합니다.</p>
+          <div class="dcs_vis dcs_vis_b"><span class="dv_no">02</span><span class="dv_kw">5 Tabs</span></div>
+        </article>
+        <article class="dcs_it">
+          <h3 class="dcs_tit">메인 → 블로그 진입 동선</h3>
+          <p class="dcs_desc">블로그 자체만이 아니라 메인 페이지의 진입 영역도 동시에 설계. 진입 동선을 처음부터 끝까지 통합 관리.</p>
+          <div class="dcs_vis dcs_vis_c"><span class="dv_no">03</span><span class="dv_kw">Unified Flow</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. 디자인 시스템 -->
+  <section class="prj_sec prj_design" aria-labelledby="p_ds">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">04</span>
+        <h2 id="p_ds" class="prj_h_tit">디자인 시스템.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        쏘카 코퍼레이트 사이트의 기존 시스템을 그대로 상속. 쏘카 시그니처 컬러 <b>#00CE7C</b>와 큰 헤딩 위계를 유지해 메인 ↔ 블로그 사이의 이질감을 제거했습니다.
+      </p>
+      <div class="ds_grid fade" style="--i: 2">
+        <div class="ds_col">
+          <span class="ds_lbl">Color</span>
+          <div class="ds_chips">
+            <span class="ds_chip is_main"><span class="ds_sw" style="background:#00CE7C"></span><span class="ds_hex">#00CE7C</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#0E1011"></span><span class="ds_hex">#0E1011</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#1A1A1A"></span><span class="ds_hex">#1A1A1A</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#4A4A4A"></span><span class="ds_hex">#4A4A4A</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#8C8C8C"></span><span class="ds_hex">#8C8C8C</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#D9D9D9"></span><span class="ds_hex">#D9D9D9</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#F2F2F2"></span><span class="ds_hex">#F2F2F2</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#FFFFFF;border:1px solid #eee"></span><span class="ds_hex">#FFFFFF</span></span>
+          </div>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Typography</span>
+          <p class="ds_font"><b>Pretendard</b> · Bold · Semi-bold · Regular</p>
+          <ul class="ds_typo" role="list">
+            <li><b>H1</b><span>60 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H2</b><span>40 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H3</b><span>28 px · −2 letter</span><span class="ds_w">Semibold</span></li>
+            <li><b>H4</b><span>20 px · −2 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H5</b><span>16 px · 0 letter</span><span class="ds_w">Regular</span></li>
+          </ul>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Canvas</span>
+          <ul class="ds_canvas" role="list">
+            <li><b>PC</b><span>1920 px</span></li>
+            <li><b>Mobile</b><span>360 px</span></li>
+            <li><b>본문</b><span>16 px</span></li>
+            <li><b>상속</b><span>쏘카 시스템</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="prj_cta">
+    <div class="inn">
+      <h2 class="cta_tit">
+        비슷한 프로젝트를<br>
+        <span class="accent">함께 할 사람을 찾고 계신가요?</span>
+      </h2>
+      <div class="cta_btns">
+        <a href="index.html#work" class="cta_btn cta_btn_ghost">다른 프로젝트 보기</a>
+        <a href="https://www.socarcorp.kr/blog" target="_blank" rel="noopener noreferrer" class="cta_btn cta_btn_solid">사이트 바로가기 ↗</a>
+      </div>
+    </div>
+  </section>
 
 </main>
 <!--// container -->

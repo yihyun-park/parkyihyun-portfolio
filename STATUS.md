@@ -18,7 +18,7 @@
 
 - 11년차 UI/UX 디자이너 & 프론트엔드 퍼블리셔
 - 도메인: 공공기관 / B2B 관제 시스템 / 코퍼레이트 / 캠페인 랜딩
-- Email: ihyeonp1103@gmail.com
+- Email: forestmm@naver.com
 - Phone: 010-3990-1108
 - GitHub: yihyun-park
 - 작업 환경: Windows + Figma + 한컴오피스

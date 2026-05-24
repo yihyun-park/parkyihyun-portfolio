@@ -3,210 +3,323 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>동반성장위원회 웹사이트 리뉴얼 · 박이현 Portfolio</title>
+<title>동반성장위원회 리뉴얼 — 11년간 쌓인 정부 사이트를 12개 흐름으로 다시 · 박이현 Portfolio</title>
 
-<meta name="description" content="동반성장위원회 웹사이트 리뉴얼 — 공공기관의 텍스트 중심 콘텐츠와 다부서 자료 등록 구조를 16px 본문·1600px 그리드·좌측 고정 GNB로 정리한 반응형 리뉴얼.">
-<meta name="keywords" content="동반성장위원회, 공공기관, 웹사이트 리뉴얼, 반응형 웹, UIUX, 디자인 시스템, 박이현">
+<meta name="description" content="동반성장위원회 — 기존 사이트를 반응형으로 리뉴얼한 공공기관 프로젝트. PC·모바일 동일 레이아웃 + 1600px 캔버스 + 좌측 고정 네비게이션 최적화.">
+<meta name="keywords" content="동반성장위원회, 공공기관 리뉴얼, 정보구조, IA 정리, 반응형 정부 사이트, UIUX, 박이현">
 <meta name="author" content="박이현 (Park Yihyun)">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 
-<meta property="og:title" content="동반성장위원회 웹사이트 리뉴얼 · 박이현 Portfolio">
-<meta property="og:description" content="공공기관 · 반응형 신규 구축 + 운영 지원 · 2024.05 – 2025.03">
+<link rel="canonical" href="https://park-yihyun.com/work-4.html">
+
+<meta property="og:title" content="동반성장위원회 리뉴얼 · 박이현 Portfolio">
+<meta property="og:description" content="11년 묵은 1150px 고정 사이트를 1600px 반응형으로 — 2024.05–2025.03 · UI/UX + 기획">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://park-yihyun.com/work-4.html">
+<meta property="og:image" content="https://park-yihyun.com/images/sangsaeng-pc.png">
+<meta property="og:image:alt" content="동반성장위원회 리뉴얼 PC 메인">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Park Yihyun Portfolio">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="동반성장위원회 리뉴얼 · 박이현 Portfolio">
+<meta name="twitter:description" content="공공기관 사이트 전면 리뉴얼 케이스 스터디">
+<meta name="twitter:image" content="https://park-yihyun.com/images/sangsaeng-pc.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "동반성장위원회 리뉴얼",
+  "creator": { "@type": "Person", "name": "박이현" },
+  "dateCreated": "2024-05",
+  "dateModified": "2025-03",
+  "description": "기존 동반성장위원회 사이트를 1600px 반응형으로 전면 리뉴얼한 공공기관 프로젝트",
+  "inLanguage": "ko-KR",
+  "url": "https://park-yihyun.com/work-4.html"
+}
+</script>
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paperlogy:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a href="#container" class="skip">본문 바로가기</a>
-
 <div class="blob a" aria-hidden="true"></div>
 <div class="blob b" aria-hidden="true"></div>
-
 <div class="prog" aria-hidden="true"></div>
 
 <header id="header">
   <div class="hd_in">
-    <a href="index.html" class="logo" aria-label="홈으로">PARK YIHYUN</a>
-    <nav aria-label="주요 메뉴">
+    <a href="index.html" class="logo" aria-label="홈으로">
+      PARK<span class="lg_dot" aria-hidden="true">·</span>YH
+    </a>
+    <nav class="hd_nav" aria-label="주요 메뉴">
       <ul class="gnb_lst" role="list">
+        <li><a href="index.html" class="gnb_lk">Index</a></li>
         <li><a href="index.html#about" class="gnb_lk">About</a></li>
-        <li><a href="index.html#work" class="gnb_lk">Work</a></li>
+        <li><a href="index.html#work" class="gnb_lk on">Work</a></li>
         <li><a href="index.html#contact" class="gnb_lk">Contact</a></li>
       </ul>
     </nav>
+    <a href="mailto:forestmm@naver.com" class="hd_cta" aria-label="이메일 보내기">
+      <span class="hd_cta_txt">forestmm@naver.com</span>
+      <span class="hd_cta_btn" aria-hidden="true">↗</span>
+    </a>
+    <button type="button" class="hd_burger" aria-label="메뉴 열기" aria-controls="mo_drawer" aria-expanded="false">
+      <span class="bg_ln" aria-hidden="true"></span><span class="bg_ln" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
+<aside id="mo_drawer" class="mo_drawer" aria-hidden="true">
+  <nav aria-label="모바일 주요 메뉴">
+    <ul class="mo_lst" role="list">
+      <li><a href="index.html" class="mo_lk">Index</a></li>
+      <li><a href="index.html#about" class="mo_lk">About</a></li>
+      <li><a href="index.html#work" class="mo_lk">Work</a></li>
+      <li><a href="index.html#contact" class="mo_lk">Contact</a></li>
+    </ul>
+    <a class="mo_mail" href="mailto:forestmm@naver.com">forestmm@naver.com</a>
+  </nav>
+</aside>
+
 <main id="container">
 
-  <div class="inn bk_nav">
-    <a href="index.html#work" class="lnk_bk">작업 리스트</a>
-  </div>
-
-  <section id="detail" aria-labelledby="dt_tit">
-    <div class="dt_in">
-
-      <div class="dt_top fade">
-        <span class="mark">동반성장</span>
-        <h1 id="dt_tit" class="tit">동반성장위원회 웹사이트 리뉴얼</h1>
+  <section class="prj_hero" aria-labelledby="prj_tit">
+    <div class="inn">
+      <div class="prj_eye fade" style="--i: 0">
+        <a href="index.html#work" class="prj_back">← Case Study</a>
+        <span class="prj_no">04 · 동반성장위원회 리뉴얼</span>
       </div>
-
-      <dl class="dt_meta fade">
-        <div class="row">
-          <dt class="lbl">KEYWORD</dt>
-          <dd class="val">
-            <ul class="tag_lst">
-              <li>동반성장위원회</li><li>공공기관</li><li>반응형웹</li>
-              <li>리뉴얼</li><li>UIUX</li><li>디자인시스템</li>
-            </ul>
+      <div class="prj_hd">
+        <h1 id="prj_tit" class="prj_tit fade" style="--i: 1">동반성장위원회 리뉴얼</h1>
+        <p class="prj_subtit fade" style="--i: 1">기존 정부 사이트를 <span class="accent">반응형으로 전면 리뉴얼</span>한 공공기관 프로젝트.</p>
+        <p class="prj_intro fade" style="--i: 2">
+          기존 동반성장위원회 사이트를 <b>반응형으로 리뉴얼</b>한 프로젝트. 공공기관 홈페이지의 디자인 한계를 업그레이드하면서, PC·모바일 동일 레이아웃과 좌측 고정 네비게이션 최적화로 운영 단계까지 일관성을 유지하도록 설계했습니다.
+        </p>
+      </div>
+      <dl class="prj_meta fade" style="--i: 3">
+        <div class="prj_meta_it"><dt>의뢰처</dt><dd>동반성장위원회</dd></div>
+        <div class="prj_meta_it"><dt>작업기간</dt><dd>2024.05 — 2025.03</dd></div>
+        <div class="prj_meta_it"><dt>역할</dt><dd>UI/UX + 기획 협업 (기획 80% · 디자인 100%)</dd></div>
+        <div class="prj_meta_it">
+          <dt>라이브 사이트</dt>
+          <dd>
+            <a href="https://www.winwingrowth.or.kr/main.do" target="_blank" rel="noopener noreferrer" class="meta_lk">winwingrowth.or.kr ↗</a><br>
+            <a href="https://www.winwingrowth.or.kr/site/cntnts/CNTNTS_009.do" target="_blank" rel="noopener noreferrer" class="meta_lk meta_lk_sub">영문 사이트 ↗</a>
           </dd>
         </div>
-        <div class="row">
-          <dt class="lbl">DATE</dt>
-          <dd class="val">2024.05 – 2025.03</dd>
-        </div>
-        <div class="row">
-          <dt class="lbl">ROLE</dt>
-          <dd class="val">디자인 단독 / 기획 협업</dd>
-        </div>
       </dl>
-
-      <div class="dt_desc fade">
-        <p>
-          동반성장위원회 웹사이트 리뉴얼은 텍스트 중심 콘텐츠와 다부서 자료 등록
-          구조를 가진 공공기관 사이트의 전면 개편 프로젝트입니다. 기존 사이트는 PC
-          전용에 정보 위계가 흐려져 모바일 사용자와 외부 방문자 모두에게 가독성·탐색성
-          이슈가 있었습니다.
-        </p>
-        <p>
-          공공기관의 정보 위계를 보존하되 현대적 비율의 캔버스로 가독성과 시각적
-          균형을 확보하기 위해 본문 16px·1600px 그리드를 적용했고, 직원과 외부
-          방문자 모두가 동일한 정보 구조에 익숙해지도록 PC·모바일 동일 레이아웃
-          원칙을 채택해 디바이스 간 분기를 최소화했습니다. 서브페이지 깊이가 깊은
-          공공기관 IA 특성에 맞춰 좌측 고정 GNB를 적용해 현재 위치를 항상 인지할 수
-          있도록 했으며, 공공기관의 핵심 커뮤니케이션 채널인 뉴스·보도자료 섹션의
-          위계를 상향해 메인 영역에서 우선 노출되도록 콘텐츠 배치를 재설계했습니다.
-        </p>
-        <p>
-          디자인 시스템과 PC·태블릿·모바일 3개 해상도 풀 페이지, 신규 GNB 구조와
-          서브페이지 템플릿까지 운영 단계 인계를 위해 정리했습니다.
-        </p>
-        <p class="note">
-          <strong>Note —</strong> 본 산출물은 리뉴얼 설계 단계의 본인 의사결정
-          기반 디자인입니다. 프로젝트 중반 클라이언트 요청으로 운영 디자인은
-          외부 레퍼런스 카피 방향으로 전환되어, 현재 라이브된 화면은 본
-          산출물과 다릅니다.
-        </p>
-      </div>
-
-      <div class="dt_compare fade">
-        <div class="comp_head">
-          <span class="comp_eyebrow">Project Goal</span>
-          <h3 class="comp_tit">고객사의 니즈를 충족하여 디자인을 개선하는 방향으로</h3>
-        </div>
-        <div class="comp_grid">
-          <div class="pill asis">공공기관 담당자가 많아 자료 정리 불가,<br><strong>기존 홈페이지의 자료를 그대로 업그레이드</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">기존 사이트의 기획을 참고하여<br>공공기관 홈페이지의 디자인의 한계를 업그레이드</div>
-
-          <div class="pill asis">폰트 사이즈나 화면을 <strong>크게크게</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">PC·모바일 동일 레이아웃 적용, 본문 텍스트 16px<br>화면 사이즈 1600px 제작</div>
-
-          <div class="pill asis"><strong>뉴스와 보도자료</strong> 강조하여 디자인</div>
-          <div class="arrow"></div>
-          <div class="pill tobe">뉴스·보도자료 섹션 강조,<br>위치 재배치 및 배경 강조 처리</div>
-
-          <div class="pill asis">서브페이지에 <strong>왼쪽 사이드 메뉴</strong> 필수 요구</div>
-          <div class="arrow"></div>
-          <div class="pill tobe">좌측 고정 네비게이션 최적화, 메인 콘텐츠는<br>UI/UX 그리드 원칙에 맞춰 배치</div>
-        </div>
-      </div>
-
-      <div class="ia_diagram fade">
-        <div class="comp_head">
-          <span class="comp_eyebrow">Information Architecture</span>
-          <h3 class="comp_tit">동반성장위원회 사이트맵</h3>
-        </div>
-        <div class="ia_tree">
-          <span class="ia_root">동반성장위</span>
-          <ul class="ia_branches">
-            <li class="ia_branch">
-              <span class="ia_node lv1">위원회 소개</span>
-              <ul class="ia_children">
-                <li class="ia_node">인사말</li>
-                <li class="ia_node">비전 · 미션</li>
-                <li class="ia_node">조직도</li>
-                <li class="ia_node">연혁</li>
-              </ul>
-            </li>
-            <li class="ia_branch">
-              <span class="ia_node lv1">사업 안내</span>
-              <ul class="ia_children">
-                <li class="ia_node">동반성장 지수</li>
-                <li class="ia_node">적합업종</li>
-                <li class="ia_node">협력이익공유</li>
-              </ul>
-            </li>
-            <li class="ia_branch">
-              <span class="ia_node lv1">미디어</span>
-              <ul class="ia_children">
-                <li class="ia_node">보도자료</li>
-                <li class="ia_node">공지사항</li>
-                <li class="ia_node">갤러리</li>
-              </ul>
-            </li>
-            <li class="ia_branch">
-              <span class="ia_node lv1">자료실</span>
-              <ul class="ia_children">
-                <li class="ia_node">발간물</li>
-                <li class="ia_node">통계자료</li>
-              </ul>
-            </li>
-            <li class="ia_branch">
-              <span class="ia_node lv1">참여</span>
-              <ul class="ia_children">
-                <li class="ia_node">Q&amp;A</li>
-                <li class="ia_node">신청 · 문의</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="vis land_tri fade">
-      <figure class="big_landing">
-        <img src="images/work-4-pc.png" alt="동반성장위원회 — PC 버전" loading="lazy">
-        <figcaption>PC</figcaption>
-      </figure>
-      <figure class="big_landing tablet">
-        <img src="images/work-4-tablet.png" alt="동반성장위원회 — Tablet 버전" loading="lazy">
-        <figcaption>Tablet</figcaption>
-      </figure>
-      <figure class="big_landing mo">
-        <img src="images/work-4-mo.png" alt="동반성장위원회 — Mobile 버전" loading="lazy">
-        <figcaption>Mobile</figcaption>
-      </figure>
     </div>
   </section>
 
-  <section class="pgr">
-    <div class="inn pgr_in">
-      <a href="index.html#work" class="btn_list">목록보기</a>
-      <a href="#header" class="btn_top">TOP</a>
+  <aside class="prj_note fade" role="note" aria-label="작업물 안내">
+    <span class="ico" aria-hidden="true">i</span>
+    <p class="txt"><b>동반성장위원회 메인 페이지</b>는 의뢰인 요청으로 운영 단계에서 외부 사이트 디자인을 카피하는 방향으로 변경되었습니다. 본 작업물의 메인 화면은 본인 디자인·설계 완료 단계의 결과물이며, <b>영문 사이트 · 서브페이지 등은 그대로 라이브 운영 중</b>입니다.</p>
+  </aside>
+
+  <!-- 01. As-Is → To-Be -->
+  <section class="prj_sec" aria-labelledby="p_baseline">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">01</span>
+        <h2 id="p_baseline" class="prj_h_tit">11년 묵은 1150px,<br>1600px 반응형으로.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        2013년 오픈된 <b>1150px 고정 그리드</b>의 옛 사이트를, 2024년 기준 <b>1600px 반응형 그리드</b>로 전면 리뉴얼했습니다. 정보구조 · 콘텐츠 위계 · 디바이스 대응을 처음부터 다시 정의했습니다.
+      </p>
+      <div class="prj_baseline fade" style="--i: 2">
+        <figure class="bl_card bl_as" data-note="2013 · 4분할 카드 메인">
+          <figcaption class="bl_cap">
+            <span class="bl_role">As Is</span>
+            <span class="bl_size">1150 px · Fixed Grid</span>
+          </figcaption>
+          <div class="bl_img"><img src="images/sangsaeng-asis.png" alt="옛 동반성장위원회 메인 · 1150px 고정 그리드" loading="lazy"></div>
+        </figure>
+        <figure class="bl_card bl_to" data-note="2024 · 반응형 12컬럼 시스템">
+          <figcaption class="bl_cap">
+            <span class="bl_role bl_role_to">To Be</span>
+            <span class="bl_size">1600 px · Responsive Grid</span>
+          </figcaption>
+          <div class="bl_img"><img src="images/sangsaeng-pc.png" alt="신규 동반성장위원회 메인 · 1600px 반응형 그리드" loading="lazy"></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. 고객사 니즈 → 4가지 -->
+  <section class="prj_sec" aria-labelledby="p_problem">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">02</span>
+        <h2 id="p_problem" class="prj_h_tit">고객사 니즈를 충족하며<br>디자인을 업그레이드.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        공공기관 담당자가 많은 사이트 특성상 <b>자료 정리가 어려운 상태</b>에서, 기존 홈페이지의 자료를 그대로 살리면서 디자인을 업그레이드해야 했습니다. 폰트와 화면은 크게, 뉴스·보도자료는 강조하고, 서브페이지에는 좌측 사이드 메뉴를 필수로 두는 — 고객사 요구를 그대로 반영하며 UI/UX 원칙으로 최적화한 작업입니다.
+      </p>
+      <ul class="prj_card4 fade" style="--i: 2" role="list">
+        <li><span class="card_ico" data-icon="folderopen" aria-hidden="true"></span><h3 class="card_tit">자료 정리 부담</h3><p class="card_desc">공공기관 담당자가 많아 기존 자료를 그대로 업그레이드해야 함</p></li>
+        <li><span class="card_ico" data-icon="magnifying" aria-hidden="true"></span><h3 class="card_tit">크게크게 디자인</h3><p class="card_desc">폰트와 화면을 크게 — 정보 가독성 우선 요구</p></li>
+        <li><span class="card_ico" data-icon="bull" aria-hidden="true"></span><h3 class="card_tit">뉴스·보도자료 강조</h3><p class="card_desc">메인의 뉴스·보도자료 섹션을 위치 재배치 + 배경 강조</p></li>
+        <li><span class="card_ico" data-icon="bars" aria-hidden="true"></span><h3 class="card_tit">좌측 사이드 메뉴</h3><p class="card_desc">서브페이지 좌측 고정 네비게이션 — 고객사 필수 요구</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="prj_sec" aria-labelledby="p_screen">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">03</span>
+        <h2 id="p_screen" class="prj_h_tit">PC · Tablet · Mobile<br>한 위계로 풀어냈다.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        1600px 메인 캔버스를 기준으로 Tablet · Mobile까지 동일한 위계로 재구성. 어떤 디바이스로 들어와도 같은 정보 구조를 그대로 가져갈 수 있도록 설계했습니다.
+      </p>
+      <div class="prj_tabs fade" style="--i: 2">
+        <div class="tab_nav" role="tablist" aria-label="해상도 선택">
+          <button type="button" class="tab on" data-tab="pc" role="tab" aria-selected="true">PC</button>
+          <button type="button" class="tab" data-tab="tablet" role="tab" aria-selected="false">Tablet</button>
+          <button type="button" class="tab" data-tab="mo" role="tab" aria-selected="false">Mobile</button>
+          <button type="button" class="tab" data-tab="sub" role="tab" aria-selected="false">Sub Pages</button>
+        </div>
+        <div class="tab_panels">
+          <div class="tab_panel on" data-tab="pc" role="tabpanel">
+            <figure class="panel_pc"><img src="images/sangsaeng-pc.png" alt="동반성장위원회 — PC 풀스크롤" loading="lazy"></figure>
+          </div>
+          <div class="tab_panel" data-tab="tablet" role="tabpanel">
+            <figure class="panel_tablet"><img src="images/sangsaeng-tablet.png" alt="동반성장위원회 — Tablet 풀스크롤" loading="lazy"></figure>
+          </div>
+          <div class="tab_panel" data-tab="mo" role="tabpanel">
+            <figure class="panel_mo"><img src="images/sangsaeng-mo.png" alt="동반성장위원회 — Mobile 풀스크롤" loading="lazy"></figure>
+          </div>
+          <div class="tab_panel" data-tab="sub" role="tabpanel">
+            <div class="panel_subs" aria-label="서브 페이지 6컷">
+              <figure>
+                <img src="images/sangsaeng-sub-1-greeting.png" alt="위원회 소개 · 인사말 페이지" loading="lazy">
+                <figcaption>위원회 소개 · 인사말</figcaption>
+              </figure>
+              <figure>
+                <img src="images/sangsaeng-sub-2-org.png" alt="위원회 소개 · 조직도 페이지" loading="lazy">
+                <figcaption>위원회 소개 · 조직도</figcaption>
+              </figure>
+              <figure>
+                <img src="images/sangsaeng-sub-3-award.png" alt="사업소개 · 동반성장 유공 포상 페이지" loading="lazy">
+                <figcaption>사업소개 · 동반성장 유공 포상</figcaption>
+              </figure>
+              <figure>
+                <img src="images/sangsaeng-sub-4-apply.png" alt="사업소개 · 사업신청 페이지" loading="lazy">
+                <figcaption>사업소개 · 사업신청</figcaption>
+              </figure>
+              <figure>
+                <img src="images/sangsaeng-sub-5-consortium.png" alt="사업소개 · 상생컨소시엄 기획사업 페이지" loading="lazy">
+                <figcaption>사업소개 · 상생컨소시엄</figcaption>
+              </figure>
+              <figure>
+                <img src="images/sangsaeng-sub-6-regional.png" alt="사업소개 · 지역사회 동반성장 지원사업 페이지" loading="lazy">
+                <figcaption>사업소개 · 지역사회 동반성장</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prj_sec" aria-labelledby="p_dcs">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">04</span>
+        <h2 id="p_dcs" class="prj_h_tit">3개의 디자인 의사결정,<br>왜 이렇게 만들었는지.</h2>
+      </div>
+      <div class="prj_dcs3 fade" style="--i: 1">
+        <article class="dcs_it">
+          <h3 class="dcs_tit">동반성장 뉴스 — 로고 포인트로</h3>
+          <p class="dcs_desc">개별 뉴스 콘텐츠에 썸네일 이미지가 없는 상황. 동반성장위 로고를 카드 안 시각 포인트로 활용해 그리드가 비어 보이지 않게 풀었습니다.</p>
+          <div class="dcs_vis dcs_vis_a"><span class="dv_no">01</span><span class="dv_kw">Logo as Point</span></div>
+        </article>
+        <article class="dcs_it">
+          <h3 class="dcs_tit">우수사례 표지로 빈 공간 채움</h3>
+          <p class="dcs_desc">프로젝트 자체 이미지 자료가 부족한 환경에서, 동반성장 우수사례 자료의 표지 디자인을 시각 포인트로 끌어와 콘텐츠 그리드를 자연스럽게 채웠습니다.</p>
+          <div class="dcs_vis dcs_vis_b"><span class="dv_no">02</span><span class="dv_kw">Cover-as-Visual</span></div>
+        </article>
+        <article class="dcs_it">
+          <h3 class="dcs_tit">고객사 캐릭터 — 디자인 시스템 보호</h3>
+          <p class="dcs_desc">퍼블리싱 단계에서 고객사가 자체 제작 캐릭터 사용을 요구. 컬러·여백·위계 등 기존 디자인 시스템이 틀어지지 않도록 위치·크기를 조정해 자연스럽게 통합했습니다.</p>
+          <div class="dcs_vis dcs_vis_c"><span class="dv_no">03</span><span class="dv_kw">System Preserved</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="prj_sec prj_design" aria-labelledby="p_ds">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">05</span>
+        <h2 id="p_ds" class="prj_h_tit">디자인 시스템.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        프라이머리 컬러는 <b>#2D6DB2 → #11AE4F</b> 그라데이션. 공공기관 톤의 블루에서 그린으로 자연스럽게 흐르는 메인 컬러를 중심으로, 본문 16px · 1600px 캔버스의 모던한 가독성을 더했습니다.
+      </p>
+      <div class="ds_grid fade" style="--i: 2">
+        <div class="ds_col">
+          <span class="ds_lbl">Color</span>
+          <div class="ds_chips">
+            <span class="ds_chip is_main"><span class="ds_sw" style="background:linear-gradient(135deg,#2D6DB2 0%,#11AE4F 100%)"></span><span class="ds_hex">#2D6DB2 ~ #11AE4F</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#2D6DB2"></span><span class="ds_hex">#2D6DB2</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#11AE4F"></span><span class="ds_hex">#11AE4F</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#1D1D1D"></span><span class="ds_hex">#1D1D1D</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#323232"></span><span class="ds_hex">#323232</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#606060"></span><span class="ds_hex">#606060</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#8E8E8E"></span><span class="ds_hex">#8E8E8E</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#DEDEDE"></span><span class="ds_hex">#DEDEDE</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#F6F9FF"></span><span class="ds_hex">#F6F9FF</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#F8F8F8"></span><span class="ds_hex">#F8F8F8</span></span>
+          </div>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Typography</span>
+          <p class="ds_font"><b>Pretendard</b> · Bold · Semi-bold · Regular</p>
+          <ul class="ds_typo" role="list">
+            <li><b>H1</b><span>50 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H2</b><span>40 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H3</b><span>34 px · −4 letter</span><span class="ds_w">Semibold</span></li>
+            <li><b>H4</b><span>24 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H5</b><span>20 px · −4 letter</span><span class="ds_w">Regular</span></li>
+          </ul>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Canvas</span>
+          <ul class="ds_canvas" role="list">
+            <li><b>PC</b><span>1600 px</span></li>
+            <li><b>Tablet</b><span>744 / 1024 px</span></li>
+            <li><b>Mobile</b><span>320 px</span></li>
+            <li><b>본문</b><span>16 px</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prj_cta">
+    <div class="inn">
+      <h2 class="cta_tit">비슷한 프로젝트를<br><span class="accent">함께 할 사람을 찾고 계신가요?</span></h2>
+      <div class="cta_btns">
+        <a href="index.html#work" class="cta_btn cta_btn_ghost">다른 프로젝트 보기</a>
+        <a href="mailto:forestmm@naver.com" class="cta_btn cta_btn_solid">이메일 보내기 ↗</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <script src="script.js" defer></script>
-
 </body>
 </html>

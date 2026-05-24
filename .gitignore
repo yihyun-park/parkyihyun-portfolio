@@ -5,3 +5,15 @@ _*.bat
 # OS files
 .DS_Store
 Thumbs.db
+
+# Node
+node_modules/
+
+# PDF 추출 / 개발용 산출물
+images/pdf-extract/
+images/pdf-extract-v2/
+images/pdf-pages/
+tools/
+
+# Editor
+.claude/launch.json

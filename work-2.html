@@ -3,145 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GIS 수문정보시스템 관제 플랫폼 · 박이현 Portfolio</title>
+<title>GIS 수문정보시스템 — 관측소만 보던 GIS에 사람을 더하다 · 박이현 Portfolio</title>
 
-<meta name="description" content="GIS 수문정보시스템 — 전국 수문 관측 지점과 현장 인력의 위치·업무 현황을 실시간으로 모니터링하는 관제 플랫폼.">
+<meta name="description" content="GIS 수문정보시스템 — 전국 수문 관측 지점과 현장 직원의 위치·업무 현황을 실시간 모니터링·관리하는 PC + 모바일 관제 플랫폼.">
 <meta name="keywords" content="GIS, 수문정보시스템, 관제 플랫폼, 공공기관, 반응형 웹, UIUX, 디자인 시스템, 박이현">
 <meta name="author" content="박이현 (Park Yihyun)">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 
+<link rel="canonical" href="https://park-yihyun.com/work-2.html">
+
 <meta property="og:title" content="GIS 수문정보시스템 · 박이현 Portfolio">
-<meta property="og:description" content="공공기관 · 신규 구축 · 2025.01 – 2025.03">
+<meta property="og:description" content="관측소 데이터와 현장 인력의 위치·업무 현황을 실시간 모니터링하는 PC + 모바일 관제 플랫폼 — 2025.01–2025.03 · UI/UX">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://park-yihyun.com/work-2.html">
+<meta property="og:image" content="https://park-yihyun.com/images/gis-pc.png">
+<meta property="og:image:alt" content="GIS 수문정보시스템 PC 관제 화면">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Park Yihyun Portfolio">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIS 수문정보시스템 · 박이현 Portfolio">
+<meta name="twitter:description" content="공공기관 GIS 관제 플랫폼 케이스 스터디">
+<meta name="twitter:image" content="https://park-yihyun.com/images/gis-pc.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "GIS 수문정보시스템",
+  "creator": { "@type": "Person", "name": "박이현" },
+  "dateCreated": "2025-01",
+  "dateModified": "2025-03",
+  "description": "전국 수문 관측 지점과 현장 직원의 위치·업무 현황을 실시간 모니터링하는 PC + 모바일 관제 플랫폼",
+  "inLanguage": "ko-KR",
+  "url": "https://park-yihyun.com/work-2.html"
+}
+</script>
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paperlogy:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a href="#container" class="skip">본문 바로가기</a>
 
+<!-- bg decoration -->
 <div class="blob a" aria-hidden="true"></div>
 <div class="blob b" aria-hidden="true"></div>
 
+<!-- scroll progress -->
 <div class="prog" aria-hidden="true"></div>
 
+<!-- header -->
 <header id="header">
   <div class="hd_in">
-    <a href="index.html" class="logo" aria-label="홈으로">PARK YIHYUN</a>
-    <nav aria-label="주요 메뉴">
+    <a href="index.html" class="logo" aria-label="홈으로">
+      PARK<span class="lg_dot" aria-hidden="true">·</span>YH
+    </a>
+    <nav class="hd_nav" aria-label="주요 메뉴">
       <ul class="gnb_lst" role="list">
+        <li><a href="index.html" class="gnb_lk">Index</a></li>
         <li><a href="index.html#about" class="gnb_lk">About</a></li>
-        <li><a href="index.html#work" class="gnb_lk">Work</a></li>
+        <li><a href="index.html#work" class="gnb_lk on">Work</a></li>
         <li><a href="index.html#contact" class="gnb_lk">Contact</a></li>
       </ul>
     </nav>
+    <a href="mailto:forestmm@naver.com" class="hd_cta" aria-label="이메일 보내기">
+      <span class="hd_cta_txt">forestmm@naver.com</span>
+      <span class="hd_cta_btn" aria-hidden="true">↗</span>
+    </a>
+    <button type="button" class="hd_burger" aria-label="메뉴 열기" aria-controls="mo_drawer" aria-expanded="false">
+      <span class="bg_ln" aria-hidden="true"></span>
+      <span class="bg_ln" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
+<!--// header -->
 
+<!-- mobile drawer -->
+<aside id="mo_drawer" class="mo_drawer" aria-hidden="true">
+  <nav aria-label="모바일 주요 메뉴">
+    <ul class="mo_lst" role="list">
+      <li><a href="index.html" class="mo_lk">Index</a></li>
+      <li><a href="index.html#about" class="mo_lk">About</a></li>
+      <li><a href="index.html#work" class="mo_lk">Work</a></li>
+      <li><a href="index.html#contact" class="mo_lk">Contact</a></li>
+    </ul>
+    <a class="mo_mail" href="mailto:forestmm@naver.com">forestmm@naver.com</a>
+  </nav>
+</aside>
+<!--// mobile drawer -->
+
+<!-- container -->
 <main id="container">
 
-  <div class="inn bk_nav">
-    <a href="index.html#work" class="lnk_bk">작업 리스트</a>
-  </div>
-
-  <section id="detail" aria-labelledby="dt_tit">
-    <div class="dt_in">
-
-      <div class="dt_top fade">
-        <span class="mark">GIS</span>
-        <h1 id="dt_tit" class="tit">GIS 수문정보시스템 관제 플랫폼 디자인</h1>
+  <!-- prj_hero -->
+  <section class="prj_hero" aria-labelledby="prj_tit">
+    <div class="inn">
+      <div class="prj_eye fade" style="--i: 0">
+        <a href="index.html#work" class="prj_back">← Selected Work</a>
+        <span class="prj_no">02 — B2B / Public Sector</span>
       </div>
-
-      <dl class="dt_meta fade">
-        <div class="row">
-          <dt class="lbl">KEYWORD</dt>
-          <dd class="val">
-            <ul class="tag_lst">
-              <li>GIS</li><li>관제플랫폼</li><li>공공기관</li>
-              <li>반응형웹</li><li>UIUX</li><li>디자인시스템</li>
-            </ul>
-          </dd>
+      <div class="prj_hd">
+        <h1 id="prj_tit" class="prj_tit fade" style="--i: 1">GIS 수문정보시스템</h1>
+        <p class="prj_subtit fade" style="--i: 1">관측소 데이터와 <span class="accent">현장 인력의 위치·업무 현황</span>을 실시간 모니터링하는 PC + 모바일 관제 플랫폼.</p>
+        <p class="prj_intro fade" style="--i: 2">
+          수문정보시스템의 <b>GIS 데이터를 기반으로</b>, 전국 수문 관측 지점과 현장 직원의 위치·업무 현황을 실시간으로 모니터링·관리하는 관제 플랫폼. 현장 대응 속도 향상 · 안전 점검 효율화 · 인력 배치 최적화를 목적으로 PC + 모바일에서 모두 사용 가능하도록 설계했습니다.
+        </p>
+      </div>
+      <dl class="prj_meta fade" style="--i: 3">
+        <div class="prj_meta_it">
+          <dt>의뢰처</dt><dd>공공기관 운영기관</dd>
         </div>
-        <div class="row">
-          <dt class="lbl">DATE</dt>
-          <dd class="val">2025.01 – 2025.03</dd>
+        <div class="prj_meta_it">
+          <dt>작업기간</dt><dd>2025.01 — 2025.03</dd>
         </div>
-        <div class="row">
-          <dt class="lbl">ROLE</dt>
-          <dd class="val">디자인 단독</dd>
+        <div class="prj_meta_it">
+          <dt>역할</dt><dd>UI/UX (디자인 100%)</dd>
+        </div>
+        <div class="prj_meta_it">
+          <dt>작업분야</dt><dd>PC OS + Mobile</dd>
         </div>
       </dl>
-
-      <div class="dt_desc fade">
-        <p>
-          GIS 수문정보시스템은 전국 수문 관측 지점과 현장 직원의 위치·업무 현황을
-          실시간으로 모니터링·관리하는 관제 플랫폼입니다. 현장 대응 속도와 안전 점검
-          효율, 인력 배치 최적화를 목적으로 웹과 모바일 양쪽에서 사용 가능하도록
-          설계했습니다.
-        </p>
-        <p>
-          관제 담당자와 현장 직원이 동일한 정보 구조를 공유하도록 PC·모바일 동일
-          레이아웃을 적용해 디바이스 간 분기를 최소화했고, 모바일 환경에서는 지도
-          영역을 우선화하고 보조 기능을 플로팅 컨트롤로 정리해 현장에서의 즉각적
-          지점 확인을 우선했습니다. 복잡한 관제 정보(관측 데이터·인력 상태·알림)를
-          직관적으로 구분할 수 있도록 그리드와 카드 시스템을 체계화했으며, 전통적
-          관제 시스템의 보수적 팔레트에서 벗어나 보라 계열 메인 컬러(#605BFF)를
-          적용해 현대적·기술적 인상을 부여하면서 상태 컬러와의 시각적 충돌을 회피했습니다.
-        </p>
-        <p>
-          관제 시스템 특성상 일반 정보 사이트보다 정보 밀도가 높은 환경에서, 데이터
-          가시성과 시각적 피로도 사이의 균형이 디자인 의사결정의 주요 기준이었습니다.
-        </p>
-      </div>
-
-      <div class="dt_compare fade">
-        <div class="comp_head">
-          <span class="comp_eyebrow">Project Goal</span>
-          <h3 class="comp_tit">복잡한 관제 정보를 직관적인 UI로 정리하는 방향으로</h3>
-        </div>
-        <div class="comp_grid">
-          <div class="pill asis">PC와 모바일 <strong>동일 화면</strong> 적용 — 모바일 가독성 저하</div>
-          <div class="arrow"></div>
-          <div class="pill tobe">PC·모바일 동일 레이아웃 적용<br>일관된 사용자 경험 제공</div>
-
-          <div class="pill asis">모바일 환경에서도 <strong>지도 화면을 최대한 넓게</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">지도 전체화면 제공 및 기능 버튼 최소·최적화<br>모바일 가독성 및 사용성 강화</div>
-
-          <div class="pill asis">콘텐츠 <strong>구조가 복잡</strong>하여 직관적인 UI로 구성</div>
-          <div class="arrow"></div>
-          <div class="pill tobe">레이아웃·컴포넌트 체계화 및 그리드 시스템 적용<br>정보 전달력 및 접근성 향상</div>
-
-          <div class="pill asis">전통 관제 시스템의 <strong>보수적 컬러 팔레트</strong></div>
-          <div class="arrow"></div>
-          <div class="pill tobe">보라 계열 메인 컬러(#605BFF) 적용<br>현대적·기술적 인상 + 상태 컬러와 시각 충돌 회피</div>
-        </div>
-      </div>
-
     </div>
+  </section>
+  <!--// prj_hero -->
 
-    <div class="vis fade">
-      <figure class="big">
-        <div class="big_bx">
-          <img src="images/gis.png" alt="GIS 수문정보시스템 관제 플랫폼" loading="lazy">
-        </div>
-        <figcaption>GIS 수문정보시스템 관제 플랫폼</figcaption>
-      </figure>
+  <!-- 01. 문제 → 의사결정 페어 -->
+  <section class="prj_sec" aria-labelledby="p_problem">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">01</span>
+        <h2 id="p_problem" class="prj_h_tit">4가지 문제를<br>4가지 의사결정으로.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        기존 시스템은 <b>PC와 모바일 화면을 동일하게</b> 설계되어 있고 콘텐츠 구조가 복잡한 상태였습니다. 4가지 문제를 분석하고, 각각에 대응하는 디자인 의사결정으로 정리했습니다.
+      </p>
+      <div class="prj_pair_grid fade" style="--i: 2">
+
+        <article class="prj_pair">
+          <div class="pair_as">
+            <span class="pair_role"><span class="pair_dot"></span>AS-IS</span>
+            <span class="card_ico"><i class="fa-solid fa-display" aria-hidden="true"></i></span>
+            <h4>PC·모바일 동일 화면</h4>
+            <p>PC 화면을 그대로 모바일에 적용 — 가독성·사용성 저하</p>
+          </div>
+          <div class="pair_arrow" aria-hidden="true">TO-BE</div>
+          <div class="pair_to">
+            <h3>Unified Tokens</h3>
+            <p>PC·모바일이 같은 컬러·타이포·아이콘을 공유하는 통합 디자인 시스템. 디바이스 전환 시 학습 비용 0에 수렴.</p>
+          </div>
+        </article>
+
+        <article class="prj_pair">
+          <div class="pair_as">
+            <span class="pair_role"><span class="pair_dot"></span>AS-IS</span>
+            <span class="card_ico"><i class="fa-solid fa-map" aria-hidden="true"></i></span>
+            <h4>지도 영역 협소</h4>
+            <p>모바일에서 지도가 가려져 현장 직원이 위치 파악 어려움</p>
+          </div>
+          <div class="pair_arrow" aria-hidden="true">TO-BE</div>
+          <div class="pair_to">
+            <h3>Map-First</h3>
+            <p>모바일에서 지도가 항상 화면 전체를 차지. 보조 기능(필터·검색·보고)은 플로팅 컨트롤로 분리해 한 손 조작 가능.</p>
+          </div>
+        </article>
+
+        <article class="prj_pair">
+          <div class="pair_as">
+            <span class="pair_role"><span class="pair_dot"></span>AS-IS</span>
+            <span class="card_ico"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+            <h4>콘텐츠 구조 복잡</h4>
+            <p>관측 데이터·인력·알림이 한 화면에 섞여 직관성 낮음</p>
+          </div>
+          <div class="pair_arrow" aria-hidden="true">TO-BE</div>
+          <div class="pair_to">
+            <h3>Information Hierarchy</h3>
+            <p>좌측 목록 · 중앙 지도 · 우측 측정 현황으로 정보 위계를 분리. 그리드 시스템으로 정보 밀도와 시각 피로도의 균형을 잡았습니다.</p>
+          </div>
+        </article>
+
+        <article class="prj_pair">
+          <div class="pair_as">
+            <span class="pair_role"><span class="pair_dot"></span>AS-IS</span>
+            <span class="card_ico"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
+            <h4>보수적 팔레트</h4>
+            <p>전통 관제 시스템 톤 — 현대적·기술적 인상 부족</p>
+          </div>
+          <div class="pair_arrow" aria-hidden="true">TO-BE</div>
+          <div class="pair_to">
+            <h3><span class="accent">#605BFF</span> Main</h3>
+            <p>전통 관제의 보수적 팔레트에서 벗어나 보라 메인 컬러. 상태 컬러(녹·황·적)와 시각 충돌을 피하면서 기술적 인상 부여.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
-  <section class="pgr">
-    <div class="inn pgr_in">
-      <a href="index.html#work" class="btn_list">목록보기</a>
-      <a href="#header" class="btn_top">TOP</a>
+  <!-- 02. 화면 -->
+  <section class="prj_sec" aria-labelledby="p_screen">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">02</span>
+        <h2 id="p_screen" class="prj_h_tit">같은 데이터,<br>두 가지 맥락의 화면.</h2>
+      </div>
+
+      <p class="prj_h_desc fade" style="--i: 1">
+        같은 데이터를 PC 관제 화면과 Mobile 현장 화면 두 맥락으로 풀어냈습니다. PC는 통합 모니터링, Mobile은 현장 인력의 4단계 흐름.
+      </p>
+      <div class="prj_tabs fade" style="--i: 2">
+        <div class="tab_nav" role="tablist" aria-label="해상도 선택">
+          <button type="button" class="tab on" data-tab="pc" role="tab" aria-selected="true">PC</button>
+          <button type="button" class="tab" data-tab="mo" role="tab" aria-selected="false">Mobile</button>
+        </div>
+        <div class="tab_panels">
+          <div class="tab_panel on" data-tab="pc" role="tabpanel">
+            <figure class="panel_pc">
+              <img src="images/gis-pc.png" alt="GIS 수문정보시스템 PC — 통합 관제 대시보드" loading="lazy">
+            </figure>
+          </div>
+          <div class="tab_panel" data-tab="mo" role="tabpanel">
+            <div class="panel_phones" aria-label="모바일 사용자 흐름 4컷">
+              <figure><img src="images/gis-mo-1-main.png" alt="① 메인 — 지도 + 내 지점" loading="lazy"><figcaption>① 메인 · 내 지점</figcaption></figure>
+              <figure><img src="images/gis-mo-2-legend.png" alt="② 범례 열림 — 마커 유형 분류" loading="lazy"><figcaption>② 범례 열림</figcaption></figure>
+              <figure><img src="images/gis-mo-3-status.png" alt="③ 측정 현황 — 지점 30 / 팀 7 / 측정자 43" loading="lazy"><figcaption>③ 측정 현황</figcaption></figure>
+              <figure><img src="images/gis-mo-4-detail.png" alt="④ 상세 조회 — 필터 + 리스트" loading="lazy"><figcaption>④ 상세 조회</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. 디자인 시스템 -->
+  <section class="prj_sec prj_design" aria-labelledby="p_ds">
+    <div class="inn">
+      <div class="prj_h fade">
+        <span class="prj_h_lbl">03</span>
+        <h2 id="p_ds" class="prj_h_tit">디자인 시스템.</h2>
+      </div>
+      <p class="prj_h_desc fade" style="--i: 1">
+        보라 메인 컬러 <b>#605BFF</b>를 중심으로 관제 시스템 톤을 현대화. PC 1920px · Mobile 360px 기준으로 토큰을 정의했습니다.
+      </p>
+      <div class="ds_grid fade" style="--i: 2">
+        <div class="ds_col">
+          <span class="ds_lbl">Color</span>
+          <div class="ds_chips">
+            <span class="ds_chip is_main"><span class="ds_sw" style="background:#605BFF"></span><span class="ds_hex">#605BFF</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#484554"></span><span class="ds_hex">#484554</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#F2F1FF"></span><span class="ds_hex">#F2F1FF</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#F5F5F5"></span><span class="ds_hex">#F5F5F5</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#FF8966"></span><span class="ds_hex">#FF8966</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#69BAA5"></span><span class="ds_hex">#69BAA5</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#ADA9BB"></span><span class="ds_hex">#ADA9BB</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#909090"></span><span class="ds_hex">#909090</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#404040"></span><span class="ds_hex">#404040</span></span>
+            <span class="ds_chip"><span class="ds_sw" style="background:#202020"></span><span class="ds_hex">#202020</span></span>
+          </div>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Typography</span>
+          <p class="ds_font"><b>Pretendard</b> · Bold · Semi-bold · Medium · Regular</p>
+          <ul class="ds_typo" role="list">
+            <li><b>H1</b><span>20 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H2</b><span>17 px · −4 letter</span><span class="ds_w">Bold</span></li>
+            <li><b>H3</b><span>15 px · −4 letter</span><span class="ds_w">Regular</span></li>
+            <li><b>H4</b><span>14 px · −4 letter</span><span class="ds_w">Regular</span></li>
+            <li><b>H5</b><span>13 px · −4 letter</span><span class="ds_w">Bold</span></li>
+          </ul>
+        </div>
+        <div class="ds_col">
+          <span class="ds_lbl">Canvas</span>
+          <ul class="ds_canvas" role="list">
+            <li><b>PC</b><span>1920 px</span></li>
+            <li><b>Mobile</b><span>360 px</span></li>
+            <li><b>본문</b><span>16 px</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prj_cta">
+    <div class="inn">
+      <h2 class="cta_tit">
+        비슷한 프로젝트를<br>
+        <span class="accent">함께 할 사람을 찾고 계신가요?</span>
+      </h2>
+      <div class="cta_btns">
+        <a href="index.html#work" class="cta_btn cta_btn_ghost">다른 프로젝트 보기</a>
+        <a href="mailto:forestmm@naver.com" class="cta_btn cta_btn_solid">이메일 보내기 ↗</a>
+      </div>
     </div>
   </section>
 
 </main>
+<!--// container -->
 
 <script src="script.js" defer></script>
 
