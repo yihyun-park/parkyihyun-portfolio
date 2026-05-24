@@ -218,8 +218,6 @@ body.is_dk .logo .lg_dot { color: var(--c-accent); }
 body.is_dk .gnb_lk { color: rgba(255, 255, 255, 0.55); }
 body.is_dk .gnb_lk:hover,
 body.is_dk .gnb_lk.on { color: #fff; }
-body.is_dk .hd_cta { color: rgba(255, 255, 255, 0.7); }
-body.is_dk .hd_cta:hover { color: #fff; }
 body.is_dk .hd_burger .bg_ln { background: #fff; }
 @supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
   #header {
@@ -260,32 +258,6 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 }
 .gnb_lk:hover { color: var(--c-fg); }
 .gnb_lk.on { color: var(--c-fg); font-weight: 700; }
-.hd_cta {
-  justify-self: end;
-  display: inline-flex; align-items: center; gap: 12px;
-  font-size: 14px;
-  color: var(--c-fg-2);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  transition: color var(--t-fast) var(--ease);
-}
-.hd_cta:hover { color: var(--c-fg); }
-.hd_cta_btn {
-  width: 32px; height: 32px;
-  background: var(--c-accent);
-  color: #fff;
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  font-size: 14px;
-  line-height: 1.4;
-  transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
-}
-.hd_cta:hover .hd_cta_btn {
-  transform: translate(2px, -2px);
-  background: #1D4FCC;
-}
-
 /* 햄버거 버튼 (모바일 전용 — PC에서 숨김) */
 .hd_burger {
   display: none;
@@ -3678,7 +3650,6 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   /* header — 모바일: 가운데 nav · 이메일 CTA 숨김 / 햄버거 버튼만 */
   .hd_in { grid-template-columns: 1fr auto; gap: 12px; }
   .hd_nav { display: none; }
-  .hd_cta { display: none; }
   .hd_burger { display: inline-flex; }
 
   /* hero — 상단 row 세로 적층 + 스크롤 인디케이터 숨김 + 박이현 국문 제거 */
