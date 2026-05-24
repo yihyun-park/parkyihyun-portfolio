@@ -517,6 +517,7 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 .about_hd {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 80px;
   margin-bottom: 120px;
 }
@@ -657,6 +658,7 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 .work_hd {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 80px;
   margin-bottom: 56px;
 }
@@ -869,6 +871,7 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 .arc_hd {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 80px;
   margin-bottom: 48px;
 }
