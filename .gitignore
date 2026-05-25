@@ -17,3 +17,5 @@ tools/
 
 # Editor
 .claude/launch.json
+
+.vercel
