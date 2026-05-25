@@ -3301,6 +3301,43 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   .tab_panel .panel_subs { grid-template-columns: 1fr; gap: 20px; }
 }
 
+/* 가로 스크롤 배너 변형 (work-4 동반성장 sub 전용) */
+.tab_panel .panel_subs.panel_subs_scroll {
+  display: flex;
+  grid-template-columns: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 4px 0 20px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--side);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-line) transparent;
+}
+.tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar { height: 8px; }
+.tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar-track { background: transparent; }
+.tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar-thumb {
+  background: var(--c-line);
+  border-radius: 999px;
+}
+.tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar-thumb:hover { background: var(--c-fg-3); }
+.tab_panel .panel_subs.panel_subs_scroll figure {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  margin: 0;
+}
+.tab_panel .panel_subs.panel_subs_scroll img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: top center;
+}
+@media (max-width: 768px) {
+  .tab_panel .panel_subs.panel_subs_scroll figure { flex: 0 0 260px; }
+}
+
 /* placeholder — 자료 들어갈 자리 (점선 박스 + 라벨) */
 .tab_panel .panel_ph {
   display: flex;
