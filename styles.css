@@ -3699,22 +3699,9 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   .hero_name .name_kr { display: none; }
   .hero_desc { margin-bottom: 40px; }
 
-  /* about — 헤딩 첫 두 줄 제거 / 카드 2x2 유지 / 체크박스 → ✓ / sub 숨김 */
-  .ab_long { display: none; }
-  .ab_lst .cb { display: none; }
-  .ab_lst li { padding-left: 0; }
-  .ab_lst li.on .lst_txt::before {
-    content: "✓ ";
-    color: var(--c-accent);
-    font-weight: 700;
-    margin-right: 4px;
-  }
-  .ab_lst .sub { display: none; }
+  /* about — PC와 동일한 디자인(체크박스 박스 + sub 텍스트) 유지, 사이즈만 조정 */
 
-  /* contact — 짧은 헤딩 / Copy·태그 숨김 */
-  .ct_full { display: none; }
-  .ct_short { display: inline; }
-  .ct_act, .ct_tag { display: none; }
+  /* contact — PC와 동일 콘텐츠 유지 */
 
   /* prj_* 모바일 */
   .prj_hd { grid-template-columns: 1fr; gap: 32px; }
@@ -3736,14 +3723,16 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   .about_hd { grid-template-columns: 1fr; gap: 48px; margin-bottom: 80px; }
   /* about cards — 모바일에서도 동일 비율로 단순 1열 */
   .about_grd { grid-template-columns: 1fr; }
-  .ab_card { padding: 28px; }
+  .ab_card { padding: 32px 24px; }
   .ab_card:not(:last-child)::after { display: none; }
   .ab_card:not(:last-child) {
     border-bottom: 1px solid var(--c-line);
   }
-  .ab_card .lbl { font-size: 12px; margin-bottom: 18px; }
-  .ab_tit { font-size: 20px; margin-bottom: 24px; }
-  .ab_lst li { font-size: 14px; padding: 8px 0; gap: 10px; }
+  .ab_card .lbl { font-size: 12px; margin-bottom: 20px; }
+  .ab_tit { font-size: 22px; margin-bottom: 28px; }
+  .ab_lst li { font-size: 15px; padding: 12px 0; gap: 12px; }
+  .ab_lst .cb { width: 16px; height: 16px; margin-top: 2px; }
+  .ab_lst .sub { font-size: 12px; }
 
   .work_hd { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
   .work_lst { grid-template-columns: 1fr; gap: 56px; }
@@ -3790,9 +3779,11 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 
   .about_hd { margin-bottom: 60px; gap: 36px; }
   .about_intro p { font-size: 14px; }
-  .ab_card { padding: 28px; }
-  .ab_tit { font-size: 20px; margin-bottom: 28px; }
-  .ab_lst li { font-size: 14px; padding: 12px 0; }
+  .ab_card { padding: 28px 20px; }
+  .ab_tit { font-size: 20px; margin-bottom: 24px; }
+  .ab_lst li { font-size: 14px; padding: 10px 0; gap: 10px; }
+  .ab_lst .cb { width: 14px; height: 14px; }
+  .ab_lst .sub { font-size: 11px; }
 
   .bk_nav { padding-top: 80px; }
   .dt_meta .row { grid-template-columns: 70px 1fr; gap: 14px; }
