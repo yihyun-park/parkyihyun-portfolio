@@ -2502,8 +2502,8 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 /* SVG mask-image 방식 — data-icon으로 아이콘 지정, color로 톤 인계 */
 .card_ico[data-icon]::before {
   content: "";
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   background-color: currentColor;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
