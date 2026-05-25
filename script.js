@@ -346,4 +346,44 @@
       }
     });
   }
+
+  // 8. 가로 스크롤 배너 — 마우스 click-drag 지원
+  //    (모바일 터치 스와이프는 overflow-x: auto로 네이티브 작동)
+  document.querySelectorAll('.panel_subs_scroll').forEach(function (track) {
+    var isDown = false;
+    var startX = 0;
+    var startScroll = 0;
+    var moved = false;
+
+    track.addEventListener('mousedown', function (e) {
+      isDown = true;
+      moved = false;
+      track.classList.add('is_drag');
+      startX = e.pageX - track.offsetLeft;
+      startScroll = track.scrollLeft;
+      e.preventDefault();
+    });
+    track.addEventListener('mouseleave', function () {
+      isDown = false;
+      track.classList.remove('is_drag');
+    });
+    track.addEventListener('mouseup', function () {
+      isDown = false;
+      track.classList.remove('is_drag');
+    });
+    track.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - track.offsetLeft;
+      var walk = (x - startX) * 1.2; // 드래그 감도
+      if (Math.abs(walk) > 5) moved = true;
+      track.scrollLeft = startScroll - walk;
+    });
+    // 드래그 중 figure 이미지가 잡혀가지 않도록
+    track.addEventListener('dragstart', function (e) { e.preventDefault(); });
+    // 드래그 직후 클릭 차단 (이미지 링크 등)
+    track.addEventListener('click', function (e) {
+      if (moved) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+  });
 })();

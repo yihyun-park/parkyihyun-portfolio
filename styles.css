@@ -3300,6 +3300,16 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--c-line) transparent;
+  cursor: grab;
+  user-select: none;
+}
+.tab_panel .panel_subs.panel_subs_scroll.is_drag {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+.tab_panel .panel_subs.panel_subs_scroll img,
+.tab_panel .panel_subs.panel_subs_scroll figure {
+  -webkit-user-drag: none;
 }
 .tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar { height: 8px; }
 .tab_panel .panel_subs.panel_subs_scroll::-webkit-scrollbar-track { background: transparent; }
