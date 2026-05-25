@@ -2123,13 +2123,14 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 /* 메타 — 4-col row */
 .prj_meta {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
   gap: 1.5rem;
   padding: 1.75rem 0;
   margin: 0;
   border-top: 1px solid var(--c-line);
   border-bottom: 1px solid var(--c-line);
 }
+.prj_meta_it dd .meta_lk { word-break: break-all; }
 .prj_meta_it dt {
   font-size: 0.75rem;
   letter-spacing: 0.16em;
@@ -2499,7 +2500,7 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
 }
 
 /* SVG mask-image 방식 — data-icon으로 아이콘 지정, color로 톤 인계 */
-.prj_card4 .card_ico[data-icon]::before {
+.card_ico[data-icon]::before {
   content: "";
   width: 22px;
   height: 22px;
@@ -2511,35 +2512,35 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   -webkit-mask-size: contain;
   mask-size: contain;
 }
-.prj_card4 .card_ico[data-icon="news"]::before {
+.card_ico[data-icon="news"]::before {
   -webkit-mask-image: url("images/icons/news.svg");
   mask-image: url("images/icons/news.svg");
 }
-.prj_card4 .card_ico[data-icon="shuffle"]::before {
+.card_ico[data-icon="shuffle"]::before {
   -webkit-mask-image: url("images/icons/shuffle.svg");
   mask-image: url("images/icons/shuffle.svg");
 }
-.prj_card4 .card_ico[data-icon="open"]::before {
+.card_ico[data-icon="open"]::before {
   -webkit-mask-image: url("images/icons/open.svg");
   mask-image: url("images/icons/open.svg");
 }
-.prj_card4 .card_ico[data-icon="group"]::before {
+.card_ico[data-icon="group"]::before {
   -webkit-mask-image: url("images/icons/group.svg");
   mask-image: url("images/icons/group.svg");
 }
-.prj_card4 .card_ico[data-icon="folderopen"]::before {
+.card_ico[data-icon="folderopen"]::before {
   -webkit-mask-image: url("images/icons/folderopen.svg");
   mask-image: url("images/icons/folderopen.svg");
 }
-.prj_card4 .card_ico[data-icon="magnifying"]::before {
+.card_ico[data-icon="magnifying"]::before {
   -webkit-mask-image: url("images/icons/magnifying.svg");
   mask-image: url("images/icons/magnifying.svg");
 }
-.prj_card4 .card_ico[data-icon="bull"]::before {
+.card_ico[data-icon="bull"]::before {
   -webkit-mask-image: url("images/icons/bull.svg");
   mask-image: url("images/icons/bull.svg");
 }
-.prj_card4 .card_ico[data-icon="bars"]::before {
+.card_ico[data-icon="bars"]::before {
   -webkit-mask-image: url("images/icons/bars.svg");
   mask-image: url("images/icons/bars.svg");
 }
