@@ -2846,20 +2846,20 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   border-radius: 20px;
   overflow: hidden;
 }
-/* 중앙 분리 트랙 (수직 화살표) */
+/* 중앙 분리 트랙 (수직 화살표) — padding 보정 */
 .prj_baseline::before {
   content: "";
   position: absolute;
-  left: calc(1150 / 2750 * 100%);
-  top: 80px;
-  bottom: 24px;
+  left: calc(1.5rem + (1150 / 2750) * (100% - 3rem));
+  top: 5rem;
+  bottom: 1.5rem;
   width: 1px;
   background: linear-gradient(180deg, transparent 0%, var(--c-line) 12%, var(--c-line) 88%, transparent 100%);
 }
 .prj_baseline::after {
   content: "→";
   position: absolute;
-  left: calc(1150 / 2750 * 100%);
+  left: calc(1.5rem + (1150 / 2750) * (100% - 3rem));
   top: 50%;
   transform: translate(-50%, -50%);
   display: inline-flex;
@@ -3006,52 +3006,37 @@ body.is_dk .hd_burger .bg_ln { background: #fff; }
   box-shadow: inset 0 0 0 1px var(--c-line);
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+}
+.dcs_no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.5rem;
 }
 .dcs_tit {
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--c-fg);
-  margin: 0 0 0.75rem;
+  margin: 0;
 }
 .dcs_desc {
   font-size: 0.875rem;
   line-height: 1.4;
   color: var(--c-fg-2);
   letter-spacing: -0.005em;
-  margin: 0 0 1.5rem;
+  margin: 0;
   flex: 1;
-}
-.dcs_vis {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  background: var(--c-bg-sub, #f6f7f9);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.25rem 1.375rem;
-  position: relative;
-  overflow: hidden;
-}
-.dcs_vis_a { background: linear-gradient(135deg, #e6edff 0%, #c7d5ff 100%); }
-.dcs_vis_b { background: linear-gradient(135deg, #d5fbf2 0%, #b3edd9 100%); }
-.dcs_vis_c { background: linear-gradient(135deg, #ddd9ff 0%, #b8aeff 100%); }
-.dcs_vis .dv_no {
-  position: absolute;
-  top: 14px; right: 18px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: rgba(17, 17, 17, 0.32);
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
-}
-.dcs_vis .dv_kw {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: var(--c-fg);
-  letter-spacing: -0.02em;
-  line-height: 1.4;
 }
 
 /* 다크 임팩트 스탯 */
