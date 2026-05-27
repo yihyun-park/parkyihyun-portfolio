@@ -227,8 +227,10 @@
     document.querySelectorAll(sel).forEach(function (el) {
       if (el.dataset.brDone === '1') return;
       var html = el.innerHTML;
-      // 마침표 + 공백 + 비공백 패턴만 br로 치환 (끝 마침표 / 약어는 건너뜀)
-      var out = html.replace(/\.([\s ]+)(?=[^<\s])/g, '.<br>');
+      // 마침표 + 공백 + 비공백 패턴만 br로 치환 (끝 마침표는 건너뜀)
+      // 비공백 문자 다음에 오는 마침표만 매칭하여 약어/소수점 보존
+      // \S 사용으로 다음 토큰이 텍스트든 HTML 태그(<b>, <span> 등)든 모두 줄바꿈 처리
+      var out = html.replace(/\.([\s ]+)(?=\S)/g, '.<br>');
       if (out !== html) {
         el.innerHTML = out;
         el.dataset.brDone = '1';
