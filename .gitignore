@@ -1,5 +1,6 @@
 # Local helper scripts & logs (not part of the site)
 _*.bat
+_*.js
 *.log
 
 # OS files
