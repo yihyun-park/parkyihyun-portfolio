@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* ==========================================================
+   motion.css — About 텍스트 리빌 (오버레이)
+   motion.js가 단어를 .mtn-w로 감싸고 --w(순번)를 넣는다.
+   문단이 화면에 들어오면 .mtn-on이 붙고, 앞 단어부터
+   순서대로 원래 색으로 차오른다 (단방향).
+   ========================================================== */
+
+.mtn-w {
+  color: rgba(26, 26, 26, 0.16);
+  transition: color 0.5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* .fade 페이드인(약 0.2s 지연)이 끝난 뒤 시작하도록 base offset */
+.mtn-on .mtn-w {
+  color: inherit;
+  transition-delay: calc(200ms + var(--w, 0) * 40ms);
+}
+
+@media (max-width: 768px) {
+  /* 모바일은 문단이 길어져 총 시간이 늘어나므로 간격 축소 */
+  .mtn-on .mtn-w { transition-delay: calc(160ms + var(--w, 0) * 28ms); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mtn-w {
+    color: inherit;
+    transition: none;
+  }
+}

@@ -84,6 +84,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paperlogy:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
 </head>
 <body>
 
@@ -452,54 +453,52 @@
     <div class="inn">
 
       <div class="ct_hd fade" style="--i: 0">
-        <span class="lbl">Contact · Let's Talk</span>
-        <h2 id="contact_tit" class="ct_tit">
-          <span class="ct_full">함께 일할 디자이너를<br><span class="accent">찾고 계신가요?</span></span>
-          <span class="ct_short accent">함께<br>일해요.</span>
-        </h2>
+        <div class="ct_lead">
+          <span class="lbl">Contact</span>
+          <h2 id="contact_tit" class="ct_tit">
+            포트폴리오 문의와<br>
+            <span class="accent">이직 제안.</span>
+          </h2>
+        </div>
+        <div class="ct_intro">
+          <p>이메일·전화 편하게 연락 주세요. 확인하는 대로 빠르게 답변 드립니다.</p>
+        </div>
       </div>
 
-      <div class="ct_grd">
+      <dl class="ct_info fade" style="--i: 1">
 
-        <div class="ct_lead fade" style="--i: 1">
-          <p>포트폴리오 문의·이직 제안 모두 환영합니다.</p>
-          <p>이메일·전화 편하게 연락 주세요. 확인하는 대로 빠르게 답변 드립니다.</p>
-          <div class="ct_pdf">
-            <a class="btn_pdf" href="박이현_포트폴리오.pdf" download>
-              <span>Portfolio PDF · 2026</span>
-              <span class="ico" aria-hidden="true">↓</span>
-            </a>
-            <span class="pdf_meta">17.6 MB · Updated 2026.05</span>
-          </div>
+        <div class="ct_row">
+          <dt class="lbl">Email</dt>
+          <dd class="val"><a href="mailto:forestmm@naver.com">forestmm@naver.com</a></dd>
+          <button type="button" class="ct_act" data-copy="forestmm@naver.com" aria-label="이메일 복사">Copy</button>
         </div>
 
-        <dl class="ct_info fade" style="--i: 2">
+        <div class="ct_row">
+          <dt class="lbl">Phone</dt>
+          <dd class="val"><a href="tel:+82-10-3990-1108">010 — 3990 — 1108</a></dd>
+          <button type="button" class="ct_act" data-copy="010-3990-1108" aria-label="전화번호 복사">Copy</button>
+        </div>
 
-          <div class="ct_row">
-            <dt class="lbl">Email</dt>
-            <dd class="val"><a href="mailto:forestmm@naver.com">forestmm@naver.com</a></dd>
-            <button type="button" class="ct_act" data-copy="forestmm@naver.com" aria-label="이메일 복사">Copy</button>
-          </div>
+        <div class="ct_row">
+          <dt class="lbl">Based in</dt>
+          <dd class="val">Seoul, Republic of Korea</dd>
+          <span class="ct_tag">GMT+9</span>
+        </div>
 
-          <div class="ct_row">
-            <dt class="lbl">Phone</dt>
-            <dd class="val"><a href="tel:+82-10-3990-1108">010 — 3990 — 1108</a></dd>
-            <button type="button" class="ct_act" data-copy="010-3990-1108" aria-label="전화번호 복사">Copy</button>
-          </div>
+        <div class="ct_row">
+          <dt class="lbl">Available</dt>
+          <dd class="val ct_avail"><span class="ct_dot" aria-hidden="true"></span>2026.07 — 합류 가능</dd>
+          <span class="ct_tag">Open</span>
+        </div>
 
-          <div class="ct_row">
-            <dt class="lbl">Based in</dt>
-            <dd class="val">Seoul, Republic of Korea</dd>
-            <span class="ct_tag">GMT+9</span>
-          </div>
+      </dl>
 
-          <div class="ct_row">
-            <dt class="lbl">Available</dt>
-            <dd class="val ct_avail"><span class="ct_dot" aria-hidden="true"></span>2026.07 — 합류 가능</dd>
-            <span class="ct_tag">Open</span>
-          </div>
-
-        </dl>
+      <div class="ct_pdf fade" style="--i: 2">
+        <a class="btn_pdf" href="박이현_포트폴리오.pdf" download>
+          <span>Portfolio PDF · 2026</span>
+          <span class="ico" aria-hidden="true">↓</span>
+        </a>
+        <span class="pdf_meta">17.6 MB · Updated 2026.05</span>
       </div>
 
       <p class="cpr">© 2026 PARK YIHYUN · UI/UX Designer &amp; Front-end Publisher</p>
@@ -512,6 +511,7 @@
 <!--// container -->
 
 <script src="script.js" defer></script>
+<script src="motion.js" defer></script>
 
 </body>
 </html>
